@@ -1,1 +1,5 @@
 sources/generated
+sources/Device/Objects
+sources/Device/Objects-Debug
+sources/Device/Listings
+sources/Device/Listings-Debug
