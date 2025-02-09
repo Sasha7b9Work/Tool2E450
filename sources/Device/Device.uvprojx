@@ -16,7 +16,7 @@
         <TargetCommonOption>
           <Device>STM32F407ZGTx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F4xx_DFP.2.17.0</PackID>
+          <PackID>Keil.STM32F4xx_DFP.2.17.1</PackID>
           <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x20000) IRAM2(0x10000000,0x10000) IROM(0x08000000,0x100000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -990,111 +990,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Connector/Device</GroupName>
-          <Files>
-            <File>
-              <FileName>Messages_.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\common\Connector\Device\Messages_.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Messages_.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Connector\Device\Messages_.h</FilePath>
-            </File>
-            <File>
-              <FileName>Transceiver_.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Connector\Device\Transceiver_.h</FilePath>
-            </File>
-            <File>
-              <FileName>Value_.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Connector\Device\Value_.h</FilePath>
-            </File>
-            <File>
-              <FileName>Interface_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Connector\Device\Interface_d.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Interface_d.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Connector\Device\Interface_d.h</FilePath>
-            </File>
-            <File>
-              <FileName>Messages_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Connector\Device\Messages_d.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Transceiver_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Connector\Device\Transceiver_d.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Value_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Connector\Device\Value_d.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Generator</GroupName>
-          <Files>
-            <File>
-              <FileName>Generator.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\Generator.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Generator.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\Generator.h</FilePath>
-            </File>
-            <File>
-              <FileName>FPGA.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\FPGA.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>FPGA.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\FPGA.h</FilePath>
-            </File>
-            <File>
-              <FileName>SwitchingBoard.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\SwitchingBoard.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>SwitchingBoard.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\SwitchingBoard.h</FilePath>
-            </File>
-            <File>
-              <FileName>MAX532.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\MAX532.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>MAX532.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\MAX532.h</FilePath>
-            </File>
-            <File>
-              <FileName>MCP4811.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\MCP4811.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>MCP4811.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\MCP4811.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Hardware</GroupName>
           <Files>
             <File>
@@ -1179,21 +1074,6 @@
             </File>
           </Files>
         </Group>
-        <Group>
-          <GroupName>Utils</GroupName>
-          <Files>
-            <File>
-              <FileName>Queue_.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\common\Utils\Queue_.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Queue_.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Utils\Queue_.h</FilePath>
-            </File>
-          </Files>
-        </Group>
       </Groups>
     </Target>
     <Target>
@@ -1206,7 +1086,7 @@
         <TargetCommonOption>
           <Device>STM32F407ZGTx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F4xx_DFP.2.17.0</PackID>
+          <PackID>Keil.STM32F4xx_DFP.2.17.1</PackID>
           <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x20000) IRAM2(0x10000000,0x10000) IROM(0x08000000,0x100000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -2180,111 +2060,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Connector/Device</GroupName>
-          <Files>
-            <File>
-              <FileName>Messages_.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\common\Connector\Device\Messages_.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Messages_.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Connector\Device\Messages_.h</FilePath>
-            </File>
-            <File>
-              <FileName>Transceiver_.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Connector\Device\Transceiver_.h</FilePath>
-            </File>
-            <File>
-              <FileName>Value_.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Connector\Device\Value_.h</FilePath>
-            </File>
-            <File>
-              <FileName>Interface_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Connector\Device\Interface_d.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Interface_d.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Connector\Device\Interface_d.h</FilePath>
-            </File>
-            <File>
-              <FileName>Messages_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Connector\Device\Messages_d.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Transceiver_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Connector\Device\Transceiver_d.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Value_d.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Connector\Device\Value_d.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Generator</GroupName>
-          <Files>
-            <File>
-              <FileName>Generator.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\Generator.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Generator.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\Generator.h</FilePath>
-            </File>
-            <File>
-              <FileName>FPGA.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\FPGA.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>FPGA.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\FPGA.h</FilePath>
-            </File>
-            <File>
-              <FileName>SwitchingBoard.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\SwitchingBoard.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>SwitchingBoard.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\SwitchingBoard.h</FilePath>
-            </File>
-            <File>
-              <FileName>MAX532.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\MAX532.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>MAX532.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\MAX532.h</FilePath>
-            </File>
-            <File>
-              <FileName>MCP4811.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\Generator\MCP4811.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>MCP4811.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\Generator\MCP4811.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Hardware</GroupName>
           <Files>
             <File>
@@ -2366,21 +2141,6 @@
               <FileName>HAL_SPI1_d.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Hardware\HAL\HAL_SPI1_d.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Utils</GroupName>
-          <Files>
-            <File>
-              <FileName>Queue_.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\common\Utils\Queue_.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Queue_.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\common\Utils\Queue_.h</FilePath>
             </File>
           </Files>
         </Group>
