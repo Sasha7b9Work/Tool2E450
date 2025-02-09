@@ -2533,7 +2533,7 @@ void Canvas_Window_Color_Mode_16bpp (void)
 	temp |= cSetb0;
 	LCD_DataWrite(temp);
 }
-void Canvas_Window_Color_Mode_24bpp (void)	
+void Canvas_Window_Color_Mode_24bpp (void)
 {
 	/*
 	Canvas image’s color depth & memory R/W data width
@@ -3383,9 +3383,9 @@ void BTE_S0_Memory_Start_Address(unsigned long Addr)
 	[96h] BTE S0 Memory Start Address [31:24]
 	Bit [1:0] tie to “0” internally.
 	*/
-	LCD_RegisterWrite(0x93,Addr);
-	LCD_RegisterWrite(0x94,Addr>>8);
-	LCD_RegisterWrite(0x95,Addr>>16);
+	LCD_RegisterWrite(0x93,(uint8)Addr);
+	LCD_RegisterWrite(0x94,(uint8)(Addr>>8));
+	LCD_RegisterWrite(0x95,(uint8)(Addr>>16));
 	LCD_RegisterWrite(0x96,Addr>>24);
 }
 
@@ -3399,7 +3399,7 @@ void BTE_S0_Image_Width(unsigned short WX)
 	Unit: Pixel.
 	Bit [1:0] tie to “0” internally.
 	*/
-	LCD_RegisterWrite(0x97,WX);
+	LCD_RegisterWrite(0x97,(uint8)WX);
 	LCD_RegisterWrite(0x98,WX>>8);
 }
 
@@ -3413,10 +3413,10 @@ void BTE_S0_Window_Start_XY(unsigned short WX,unsigned short HY)
 	[9Bh] BTE S0 Window Upper-Left corner Y-coordination [7:0]
 	[9Ch] BTE S0 Window Upper-Left corner Y-coordination [12:8]
 	*/
-	LCD_RegisterWrite(0x99,WX);
+	LCD_RegisterWrite(0x99,(uint8)WX);
 	LCD_RegisterWrite(0x9A,WX>>8);
 
-	LCD_RegisterWrite(0x9B,HY);
+	LCD_RegisterWrite(0x9B,(uint8)HY);
 	LCD_RegisterWrite(0x9C,HY>>8);
 }
 
@@ -3433,9 +3433,9 @@ void BTE_S1_Memory_Start_Address(unsigned long Addr)
 	[A0h] BTE S1 Memory Start Address [31:24]
 	Bit [1:0] tie to “0” internally.
 	*/
-	LCD_RegisterWrite(0x9D,Addr);
-	LCD_RegisterWrite(0x9E,Addr>>8);
-	LCD_RegisterWrite(0x9F,Addr>>16);
+	LCD_RegisterWrite(0x9D,(uint8)Addr);
+	LCD_RegisterWrite(0x9E,(uint8)(Addr>>8));
+	LCD_RegisterWrite(0x9F,(uint8)(Addr>>16));
 	LCD_RegisterWrite(0xA0,Addr>>24);
 }
 
@@ -3447,10 +3447,10 @@ void S1_Constant_color_256(unsigned char temp)
     LCD_DataWrite(temp);
 
     LCD_CmdWrite(0x9E);
-    LCD_DataWrite(temp<<3);
+    LCD_DataWrite((uint16)(temp<<3));
 
     LCD_CmdWrite(0x9F);
-    LCD_DataWrite(temp<<6);
+    LCD_DataWrite((uint16)(temp<<6));
 }
 
 //Input data format:R5G6B6
@@ -3463,7 +3463,7 @@ void S1_Constant_color_65k(unsigned short temp)
     LCD_DataWrite(temp>>3);
 
     LCD_CmdWrite(0x9F);
-    LCD_DataWrite(temp<<3);
+    LCD_DataWrite((uint16)(temp<<3));
 }
 
 //Input data format:R8G8B8
@@ -3473,10 +3473,10 @@ void S1_Constant_color_16M(unsigned long temp)
     LCD_DataWrite(temp>>16);
 
     LCD_CmdWrite(0x9E);
-    LCD_DataWrite(temp>>8);
+    LCD_DataWrite((uint16)(temp>>8));
 
     LCD_CmdWrite(0x9F);
-    LCD_DataWrite(temp);
+    LCD_DataWrite((uint16)temp);
 }
 
 
@@ -3491,7 +3491,7 @@ void BTE_S1_Image_Width(unsigned short WX)
 	Unit: Pixel.
 	Bit [1:0] tie to “0” internally.
 	*/
-	LCD_RegisterWrite(0xA1,WX);
+	LCD_RegisterWrite(0xA1,(uint8)WX);
 	LCD_RegisterWrite(0xA2,WX>>8);
 }
 
@@ -3505,10 +3505,10 @@ void BTE_S1_Window_Start_XY(unsigned short WX,unsigned short HY)
 	[A5h] BTE S1 Window Upper-Left corner Y-coordination [7:0]
 	[A6h] BTE S1 Window Upper-Left corner Y-coordination [12:8]
 	*/
-	LCD_RegisterWrite(0xA3,WX);
+	LCD_RegisterWrite(0xA3,(uint8)WX);
 	LCD_RegisterWrite(0xA4,WX>>8);
 
-	LCD_RegisterWrite(0xA5,HY);
+	LCD_RegisterWrite(0xA5,(uint8)HY);
 	LCD_RegisterWrite(0xA6,HY>>8);
 }
 
@@ -3525,9 +3525,9 @@ void BTE_Destination_Memory_Start_Address(unsigned long Addr)
 	[AAh] BTE Destination Memory Start Address [31:24]
 	Bit [1:0] tie to “0” internally.
 	*/
-	LCD_RegisterWrite(0xA7,Addr);
-	LCD_RegisterWrite(0xA8,Addr>>8);
-	LCD_RegisterWrite(0xA9,Addr>>16);
+	LCD_RegisterWrite(0xA7,(uint8)Addr);
+	LCD_RegisterWrite(0xA8,(uint8)(Addr>>8));
+	LCD_RegisterWrite(0xA9,(uint8)(Addr>>16));
 	LCD_RegisterWrite(0xAA,Addr>>24);
 }
 
@@ -3541,7 +3541,7 @@ void BTE_Destination_Image_Width(unsigned short WX)
 	Unit: Pixel.
 	Bit [1:0] tie to “0” internally.
 	*/
-	LCD_RegisterWrite(0xAB,WX);
+	LCD_RegisterWrite(0xAB,(uint8)WX);
 	LCD_RegisterWrite(0xAC,WX>>8);
 }
 
@@ -3575,10 +3575,10 @@ void BTE_Window_Size(unsigned short WX, unsigned short WY)
 	[B3h] BTE Window Height [7:0]
 	[B4h] BTE Window Height [12:8]
 	*/
-	LCD_RegisterWrite(0xB1,WX);
+	LCD_RegisterWrite(0xB1,(uint8)WX);
 	LCD_RegisterWrite(0xB2,WX>>8);
 
-	LCD_RegisterWrite(0xB3,WY);
+	LCD_RegisterWrite(0xB3,(uint8)WY);
 	LCD_RegisterWrite(0xB4,WY>>8);
 }
 
@@ -4038,7 +4038,7 @@ void SFI_DMA_Source_Start_Address(unsigned long Addr)
 	LCD_CmdWrite(0xBC);
 	LCD_DataWrite((uint16)Addr);
 	LCD_CmdWrite(0xBD);
-	LCD_DataWrite(Addr>>8);
+	LCD_DataWrite((uint16)(Addr>>8));
 	LCD_CmdWrite(0xBE);
 	LCD_DataWrite(Addr>>16);
 	LCD_CmdWrite(0xBF);
@@ -4053,9 +4053,9 @@ void SFI_DMA_Destination_Start_Address(unsigned long Addr)
 	This bits index SDRAM address [7:0][15:8][23:16][31:24]
 	*/
 	LCD_CmdWrite(0xC0);
-	LCD_DataWrite(Addr);
+	LCD_DataWrite((uint16)Addr);
 	LCD_CmdWrite(0xC1);
-	LCD_DataWrite(Addr>>8);
+	LCD_DataWrite((uint16)(Addr>>8));
 	LCD_CmdWrite(0xC2);
 	LCD_DataWrite(Addr>>16);
 	LCD_CmdWrite(0xC3);
@@ -4116,9 +4116,9 @@ void SFI_DMA_Transfer_Number(unsigned long Addr)
 	DMA Block HIGH[7:0][15:8]
 	*/
 	LCD_CmdWrite(0xC6);
-	LCD_DataWrite(Addr);
+	LCD_DataWrite((uint16)Addr);
 	LCD_CmdWrite(0xC7);
-	LCD_DataWrite(Addr>>8);
+	LCD_DataWrite((uint16)(Addr>>8));
 	LCD_CmdWrite(0xC8);
 	LCD_DataWrite(Addr>>16);
 	LCD_CmdWrite(0xC9);
@@ -4828,10 +4828,10 @@ void Foreground_color_256(unsigned char temp)
 	LCD_DataWrite(temp);
  
     LCD_CmdWrite(0xD3);
-	LCD_DataWrite(temp<<3);
+	LCD_DataWrite((uint16)(temp<<3));
   
     LCD_CmdWrite(0xD4);
-	LCD_DataWrite(temp<<6);
+	LCD_DataWrite((uint16)(temp<<6));
 }
  
 //Input data format:R5G6B5 
@@ -4844,7 +4844,7 @@ void Foreground_color_65k(unsigned short temp)
 	LCD_DataWrite(temp>>3);
   
     LCD_CmdWrite(0xD4);
-	LCD_DataWrite(temp<<3);
+	LCD_DataWrite((uint16)(temp<<3));
 }
  
 //Input data format:R8G8B8 
@@ -4854,10 +4854,10 @@ void Foreground_color_16M(unsigned long temp)
 	LCD_DataWrite(temp>>16);
  
     LCD_CmdWrite(0xD3);
-	LCD_DataWrite(temp>>8);
+	LCD_DataWrite((uint16)(temp>>8));
   
     LCD_CmdWrite(0xD4);
-	LCD_DataWrite(temp);
+	LCD_DataWrite((uint16)temp);
 }
  
  
@@ -4888,10 +4888,10 @@ void Background_color_256(unsigned char temp)
 	LCD_DataWrite(temp);
   
     LCD_CmdWrite(0xD6);
-	LCD_DataWrite(temp<<3);
+	LCD_DataWrite((uint16)(temp<<3));
    
     LCD_CmdWrite(0xD7);
-	LCD_DataWrite(temp<<6);
+	LCD_DataWrite((uint16)(temp<<6));
 }
  
 //Input data format:R5G6B6
@@ -4904,7 +4904,7 @@ void Background_color_65k(unsigned short temp)
 	LCD_DataWrite(temp>>3);
    
     LCD_CmdWrite(0xD7);
-	LCD_DataWrite(temp<<3);
+	LCD_DataWrite((uint16)(temp<<3));
 }
  
 //Input data format:R8G8B8
@@ -4914,10 +4914,10 @@ void Background_color_16M(unsigned long temp)
 	LCD_DataWrite(temp>>16);
   
     LCD_CmdWrite(0xD6);
-	LCD_DataWrite(temp>>8);
+	LCD_DataWrite((uint16)(temp>>8));
    
     LCD_CmdWrite(0xD7);
-	LCD_DataWrite(temp);
+	LCD_DataWrite((uint16)temp);
 }
 
 //[DBh]~[DEh]=========================================================================
@@ -4927,9 +4927,9 @@ void CGRAM_Start_address(unsigned long Addr)
 CGRAM START ADDRESS [31:0]
 */	 
     LCD_CmdWrite(0xDB);
-	LCD_DataWrite(Addr);
+	LCD_DataWrite((uint16)Addr);
     LCD_CmdWrite(0xDC);
-	LCD_DataWrite(Addr>>8);
+	LCD_DataWrite((uint16)(Addr>>8));
     LCD_CmdWrite(0xDD);
 	LCD_DataWrite(Addr>>16);
     LCD_CmdWrite(0xDE);
