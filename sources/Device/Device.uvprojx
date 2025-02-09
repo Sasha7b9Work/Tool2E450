@@ -1020,6 +1020,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Hardware/Display</GroupName>
+          <Files>
+            <File>
+              <FileName>RA8876.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Hardware\Display\RA8876.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>RA8876.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Hardware\Display\RA8876.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Hardware/HAL</GroupName>
           <Files>
             <File>
@@ -1071,6 +1086,21 @@
               <FileName>HAL_SPI1_d.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Hardware\HAL\HAL_SPI1_d.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Display</GroupName>
+          <Files>
+            <File>
+              <FileName>Display.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Display\Display.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Display.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Display\Display.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2090,6 +2120,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Hardware/Display</GroupName>
+          <Files>
+            <File>
+              <FileName>RA8876.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Hardware\Display\RA8876.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>RA8876.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Hardware\Display\RA8876.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Hardware/HAL</GroupName>
           <Files>
             <File>
@@ -2141,6 +2186,21 @@
               <FileName>HAL_SPI1_d.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\Hardware\HAL\HAL_SPI1_d.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Display</GroupName>
+          <Files>
+            <File>
+              <FileName>Display.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\Display\Display.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Display.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\Display\Display.h</FilePath>
             </File>
           </Files>
         </Group>
