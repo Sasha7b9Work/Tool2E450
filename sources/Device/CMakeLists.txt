@@ -44,15 +44,8 @@ file(GLOB LIBS_HAL          ../common/libs/STM32Cube_F4/Drivers/STM32F4xx_HAL_Dr
                             ../common/libs/STM32Cube_F4/Drivers/STM32F4xx_HAL_Driver/Src/*.*)
 
 file(GLOB SRC                         src/*.h src/*.cpp)
-file(GLOB CONNECTOR_DEVICE  ../common/Connector/Device/Value_.*
-                            ../common/Connector/Device/Messages_.*
-                            ../common/Connector/Device/Transceiver_.h
-                                      src/Connector/Device/*.*)
-file(GLOB GENERATOR                   src/Generator/*.*)
 file(GLOB HARDWARE_CMSIS              src/Hardware/CMSIS/*.*)
 file(GLOB HARDWARE_HAL                src/Hardware/HAL/*)
-file(GLOB UTILS             ../common/Utils/Queue.*
-                            ../common/Utils/StringUtils.*)
 
 set_source_files_properties(${LIBS_FATFS} ${LIBS_HAL}
     src/Hardware/CMSIS/system_stm32f4xx.c
@@ -60,18 +53,12 @@ set_source_files_properties(${LIBS_FATFS} ${LIBS_HAL}
 
 source_group(libs/HAL           FILES ${LIBS_HAL})
 source_group(src                FILES ${SRC})
-source_group(Connector/Device   FILES ${CONNECTOR_DEVICE})
-source_group(Generator          FILES ${GENERATOR})
 source_group(Hardware/CMSIS     FILES ${HARDWARE_CMSIS})
 source_group(Hardware/HAL       FILES ${HARDWARE_HAL})
-source_group(Utils              FILES ${UTILS})
 
 add_library(${PROJECT_NAME}
     ${LIBS_HAL}
     ${SRC}
-    ${CONNECTOR_DEVICE}
-    ${GENERATOR}
     ${HARDWARE_CMSIS}
     ${HARDWARE_HAL}
-    ${UTILS}
 )

@@ -1,2 +1,2 @@
 @echo on
-start ..\..\generated\Keil\RD3304.sln
+start ..\..\generated\Keil\Tool2E450.sln
