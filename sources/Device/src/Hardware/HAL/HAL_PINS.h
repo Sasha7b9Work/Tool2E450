@@ -46,3 +46,21 @@ namespace HAL_PINS
 {
     void Init();
 }
+
+
+extern PinOut pinHL3;
+
+extern PinOut pinBL_C;
+
+extern PinIn pinIN_7;
+extern PinIn pinIN_8;
+extern PinIn pinIN_9;
+extern PinIn pinIN_10;
+extern PinIn pinIN_31;
+
+extern PinIn pinSB4;
+extern PinIn p inSB5;
+
+extern PinIn pinENC_A8_A;
+extern PinIn pinENC_A8_B;
+
