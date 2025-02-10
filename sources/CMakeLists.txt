@@ -11,3 +11,4 @@ if(${CMAKE_BUILD_TYPE} STREQUAL Debug)
 endif()
 
 add_subdirectory(Panel)
+add_subdirectory(Device)
