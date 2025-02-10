@@ -1,5 +1,13 @@
 sources/generated
+
+sources/Device/DebugConfig
 sources/Device/Objects
 sources/Device/Objects-Debug
 sources/Device/Listings
 sources/Device/Listings-Debug
+
+sources/Panel/DebugConfig
+sources/Panel/Objects
+sources/Panel/Objects-Debug
+sources/Panel/Listings
+sources/Panel/Listings-Debug

@@ -5,10 +5,10 @@
 
   <Header>### uVision Project, (C) Keil Software</Header>
 
-  <WorkspaceName>D:\My\Prog\GitHub\Work\Tool2E450\sources\Tool2E450.uvmpw</WorkspaceName>
+  <WorkspaceName>D:\Projects\Tool2E450\sources\Tool2E450.uvmpw</WorkspaceName>
 
   <project>
-    <PathAndName>.\Device\Device.uvprojx</PathAndName>
+    <PathAndName>.\Panel\Panel.uvprojx</PathAndName>
     <NodeIsActive>1</NodeIsActive>
     <NodeIsExpanded>1</NodeIsExpanded>
   </project>

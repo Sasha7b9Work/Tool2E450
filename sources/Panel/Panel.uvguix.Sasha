@@ -6,7 +6,7 @@
   <Header>### uVision Project, (C) Keil Software</Header>
 
   <PrjGuiSettings>
-    <LastAddFilePath>D:\My\Prog\GitHub\Work\Tool2E450\sources\Device\src\Display</LastAddFilePath>
+    <LastAddFilePath></LastAddFilePath>
   </PrjGuiSettings>
 
   <ViewPool/>
@@ -40,7 +40,7 @@
       <WinId>1506</WinId>
       <ViewName>Symbols</ViewName>
       <UserString></UserString>
-      <TableColWidths>106 106 106</TableColWidths>
+      <TableColWidths>70 70 70</TableColWidths>
     </View>
     <View>
       <WinId>1936</WinId>
@@ -101,10 +101,10 @@
         <yPos>-1</yPos>
       </MaxPosition>
       <NormalPosition>
-        <Top>312</Top>
-        <Left>312</Left>
-        <Right>2232</Right>
-        <Bottom>1371</Bottom>
+        <Top>236</Top>
+        <Left>19</Left>
+        <Right>1663</Right>
+        <Bottom>1034</Bottom>
       </NormalPosition>
     </WindowPosition>
     <MDIClientArea>
