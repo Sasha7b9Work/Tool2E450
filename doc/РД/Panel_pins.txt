@@ -1,0 +1,163 @@
+STM32F407VET6
+
+PA0  23 + ENC_A8_A
+PA1  24 + ENC_A8_B
+PA2  25 + HL3           Контроль зажима салазок
+PA3  26 + IN31
+PA4  29 + SPI_NSS       Дисплей SPI NSS
+PA5  30 + SCLK          Дисплей SCLK
+PA6  31 + MISO          Дисплей MISO
+PA7  32 + MOSI          Дисплей MOSI
+PA8  67 + IN10
+PA9  68   RS_TX   SCM3725ASA RS485
+PA10 69   RS_RX   SCM3725ASA RS485
+PA11 70 + IN9
+PA12 71 + IN8
+PA13 72 + SWDIO
+PA14 76 + SWCLK
+PA15 77 + IN7
+
+PB0  35 + BL-C          Дисплей BL_C
+PB1  36 + SB4  Отключить шпиндель
+PB2  37 + SB5  Включить преднабор
+PB3  89 + IN1
+PB4  90 + HL4           Контроль зажима салазок
+PB5  91 + IN2
+PB6  92   I2C2_SCL_ADC
+PB7  93   I2C2_SDA_ADC
+PB8  95 + SA3_2         Выбрать движение от штурвала
+PB9  96 + SA3_1         Выбрать автоматический режим
+PB10 47 + I2C1_SCL_TFT  Дисплей SCL
+PB11 48 + I2C2_SDA_TFT  Дисплей SDA
+PB12 51 + IN21
+PB13 52 + IN20
+PB14 53 + IN19
+PB15 54 + IN18
+
+PC0  15 + SB2  Включить шпиндель
+PC1  16   ADC
+PC2  17 + SB3  Толчок шпинделя
+PC3  18   RS_DIR
+PC4  33 + IN23
+PC5  34   RESET
+PC6  63 + WAIT          Дислей WAIT
+PC7  64 + IN13
+PC8  65 + IN12
+PC9  66 + IN11
+PC10 78 + IN6
+PC11 79 + IN5
+PC12 80 + IN4
+PC13  7   LED
+
+PD0  81 + MPG_X1
+PD1  82 + MPG_X10
+PD2  83 + MGP_X100
+PD3  84 + MGP_X
+PD4  85 + MGP_Y
+PD5  86 + IN3
+PD6  87 + HL1       Контроль зажима стола
+PD7  88 + HL2       Контроль разжима стола
+PD8  55 + IN17
+PD9  56 + IN16
+PD10 57 + IN15
+PD11 58 + IN14
+PD12 59 + MPG_A
+PD13 60 + MPG_B
+PD14 61 + MPG_4
+PD15 62 + MPG_5
+
+PE0  97 + MPG_6
+PE1  98 + SA2_2     Выбрать движение салазок
+PE2   1 + SA2_1     Выбрать движение стола
+PE3   2 + MPG_CN
+PE4   3 + SA1       Включить насос СОЖ
+PE5   4 + SB10      Включить подачу вправо/назад
+PE6   5 + SB9       Отключить подачу
+PE7  38 + SB6       Зажим/разжим стола
+PE8  39 + SB7       Зажим/разжим салазок
+PE9  40 + ENC_A7_A
+PE10 41 + SB8       Включить подачу влево/вперёд
+PE11 42 + ENC_A7_B
+PE12 43 + IN24
+PE13 44 + IN25
+PE14 45 + IN22
+PE15 46 + I2C_interrupt_sign_out  Дислей INT
+
+
+PE4   SA1   Включить насос СОЖ
+PE2   SA2_1 Выбрать движение стола
+PE1   SA2_2 Выбрать движение салазок
+PB9   SA3_1 Выбрать автоматический режим
+PB8   SA3_2 Выбрать движение от штурвала
+
+PC0   SB2   Включить шпиндель
+PC2   SB3   Толчок шпинделя
+PB1   SB4   Отключить шпиндель
+PB2   SB5   Включить преднабор
+PE7   SB6   Зажим/разжим стола
+PE8   SB7   Зажим/разжим салазок
+PE10  SB8   Включить подачу влево/вперёд
+PE6   SB9   Отключить подачу
+PE5   SB10  Включить подачу вправо/назад
+
+PD6   HL1   Контроль зажима стола
+PD7   HL2   Контроль разжима стола
+PA2   HL3   Контроль зажима салазок
+PB4   HL4   Контроль зажима салазок
+
+PA4   SPI_NSS   Дисплей SPI NSS
+PA6   MISO      Дисплей MISO
+PA7   MOSI      Дисплей MOSI
+PC6   WAIT      Дислей WAIT
+PA5   SCLK      Дисплей SCLK
+PE15  I2C_interrupt_sign_out  Дислей INT
+PB10  I2C1_SCL_TFT  Дисплей SCL
+PB11  I2C2_SDA_TFT  Дисплей SDA
+PB0   BL-C
+
+PA0  ENC_A8_A
+PA1  ENC_A8_B
+
+PE9  ENC_A7_A
+PE11 ENC_A7_B
+
+Пуль управления MPG
+PD0  MPG_X1
+PD1  MPG_X10
+PD2  MGP_X100
+PD3  MGP_X
+PD4  MGP_Y
+PD12 MPG_A
+PD13 MPG_B
+PD14 MPG_4
+PD15 MPG_5
+PE0  MPG_6
+PE3  MPG_CN
+
+
+PB3  IN1
+PB5  IN2
+PD5  IN3
+PC12 IN4
+PC11 IN5
+PC10 IN6
+PA15 IN7
+PA12 IN8
+PA11 IN9
+PA8  IN10
+PC9  IN11
+PC8  IN12
+PC7  IN13
+PD11 IN14
+PD10 IN15
+PD9  IN16
+PD8  IN17
+PB15 IN18
+PB14 IN19
+PB13 IN20
+PB12 IN21
+PE14 IN22
+PC4  IN23
+PE12 IN24
+PE13 IN25
+PA3  IN31
