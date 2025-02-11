@@ -41,8 +41,10 @@ void Label::SetState(pchar _text, const Color &_color_text, const Color &_color_
 }
 
 
-void Rect::FillRounded(int x, int y, int round, const Color &colorFill, const Color &colorBound)
+void Rect::FillRounded(int _x, int _y, int round, const Color &colorFill, const Color &colorBound)
 {
+    SetXY(_x, _y);
+
     DrawRounded(x, y, round, colorBound);
     Rect(width - 3, height - 3).Fill(x + 2, y + 2, colorFill);
     HLine(width - 3).Draw(x + 2, y + 1);
@@ -52,16 +54,20 @@ void Rect::FillRounded(int x, int y, int round, const Color &colorFill, const Co
 }
 
 
-void Rect::Fill(int x, int y, Color color)
+void Rect::Fill(int _x, int _y, Color color)
 {
+    SetXY(_x, _y);
+
     color.SetAsCurrent();
 
     Fill(x, y);
 }
 
 
-void Rect::DrawRounded(int x, int y, int round, const Color &color)
+void Rect::DrawRounded(int _x, int _y, int round, const Color &color)
 {
+    SetXY(_x, _y);
+
     color.SetAsCurrent();
 
     HLine(width - round * 2 + 1).Draw(x + round, y);
@@ -79,15 +85,19 @@ void Rect::DrawRounded(int x, int y, int round, const Color &color)
 }
 
 
-void Rect::Draw(int x, int y, const Color &color)
+void Rect::Draw(int _x, int _y, const Color &color)
 {
+    SetXY(_x, _y);
+
     color.SetAsCurrent();
 
     Draw(x, y);
 }
 
-void Rect::Draw(int x, int y)
+void Rect::Draw(int _x, int _y)
 {
+    SetXY(_x, _y);
+
     HLine(width).Draw(x, y);
     HLine(width).Draw(x, y + height - 1);
     VLine(height).Draw(x, y);
@@ -97,9 +107,9 @@ void Rect::Draw(int x, int y)
 
 void Rect::Fill(int x0, int y0)
 {
-    for (int y = y0; y < y0 + height; y++)
+    for (int _y = y0; _y < y0 + height; _y++)
     {
-        HLine(width).Draw(x0, y);
+        HLine(width).Draw(x0, _y);
     }
 }
 

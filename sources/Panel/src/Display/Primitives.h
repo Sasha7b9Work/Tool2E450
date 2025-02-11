@@ -36,9 +36,32 @@ namespace Primitives
         void Fill(int x, int y);
         void Fill(int x, int y, Color color);
         void FillRounded(int x, int y, int round, const Color &colorFill, const Color &colorBound);
+        void SetXY(int _x, int _y)
+        {
+            x = _x;
+            y = _y;
+        }
+        int X() const
+        {
+            return x;
+        }
+        int Y() const
+        {
+            return y;
+        }
+        int Width() const
+        {
+            return width;
+        }
+        int Height() const
+        {
+            return height;
+        }
     private:
         int width;
         int height;
+        int x;
+        int y;
     };
 
 
