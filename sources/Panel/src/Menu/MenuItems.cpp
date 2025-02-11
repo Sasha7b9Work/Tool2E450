@@ -43,7 +43,7 @@ int Button::Width() const
     {
         return 112;
     }
-    else if (type == TypeButton::_2)
+    else if (type == TypeButton::_2 || type == TypeButton::_3)
     {
         return 185;
     }
@@ -60,6 +60,10 @@ int Button::Height() const
     else if (type == TypeButton::_2)
     {
         return 35;
+    }
+    else if (type == TypeButton::_3)
+    {
+        return 30;
     }
 
     return 100;
@@ -81,6 +85,15 @@ void Button::Draw()
     {
         Rect rect(Width(), Height());
         rect.FillRounded(x, y, 1, Color::GRAY_75, Color::BLACK);
+
+        Font::Set(TypeFont::GOSTAU16BOLD);
+
+        Text(text).Write(x + 5, y + 5, Color::BLACK);
+    }
+    else if (type == TypeButton::_3)
+    {
+        Rect rect(Width(), Height());
+        rect.FillRounded(x, y, 1, Color::WHITE, Color::BLACK);
 
         Font::Set(TypeFont::GOSTAU16BOLD);
 

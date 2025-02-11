@@ -234,6 +234,39 @@ namespace PageMain
         }
     };
 
+    static Button bReady
+    {
+        TypeButton::_3,
+        x_button2, bResetY.Y() + bResetY.Height() + d * 2,
+        "цнрнбмнярэ",
+        []()
+        {
+
+        }
+    };
+
+    static Button bRunning
+    {
+        TypeButton::_3,
+        x_button2, bReady.Y() + bReady.Height() + d,
+        "бшонкмемхе",
+        []()
+        {
+
+        }
+    };
+
+    static Button bCompletion
+    {
+        TypeButton::_3,
+        x_button2, bRunning.Y() + bRunning.Height() + d,
+        "гюбепьемхе",
+        []()
+        {
+
+        }
+    };
+
     static Item *items[] =
     {
         &bMessages,
@@ -241,6 +274,9 @@ namespace PageMain
         &bNetwork,
         &bResetX,
         &bResetY,
+        &bReady,
+        &bRunning,
+        &bCompletion,
         nullptr
     };
 
