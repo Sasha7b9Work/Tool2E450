@@ -99,6 +99,9 @@ namespace PageMain
         Font::Set(TypeFont::GOSTAU16BOLD);
 
         Text("УПРАВЛЕНИЕ ПОДАЧЕЙ").Write(rect.X() + 30, rect.Y() + d, Color::BLACK);
+
+        Rect rect_gray(rect.Width() - d * 2, 85);
+        rect_gray.FillRounded(rect.X() + d, rect.Y() + 135, 1, Color::GRAY_75, Color::BLACK);
     }
 
     // Преднабор координаты X
@@ -140,7 +143,12 @@ namespace PageMain
     // Преднабор
     static void DrawZonePreset()
     {
-        Rect(x5 - x4 - d, Display::PHYSICAL_HEIGHT - y4 - d * 2).FillRounded(d + x4, y4 + d, 1, Color::WHITE, Color::BLACK);
+        Rect rect(x5 - x4 - d, Display::PHYSICAL_HEIGHT - y4 - d * 2);
+        rect.FillRounded(d + x4, y4 + d, 1, Color::WHITE, Color::BLACK);
+
+        Font::Set(TypeFont::GOSTAU16BOLD);
+
+        Text("ПРЕДНАБОР").Write(rect.X() + d, rect.Y() + d, Color::BLACK);
     }
 
 
