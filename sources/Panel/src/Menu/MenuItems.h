@@ -55,8 +55,6 @@ public:
         Item(), type(_type), text(text_ru), x(_x), y(_y), funcOnPress(funcPress) { }
     virtual void DrawMenuItem(int, int, int, bool) { }
     virtual void Draw() override;
-    pchar GetTitle() const;
-    void SetTitle(pchar);
     int X() const
     {
         return x;
