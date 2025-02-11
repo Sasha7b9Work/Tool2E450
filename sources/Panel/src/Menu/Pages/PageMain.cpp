@@ -9,14 +9,33 @@ using namespace Primitives;
 
 namespace PageMain
 {
+    static int d = 5;
+
+    static int x1 = 0;
+    static int x2 = 300;
+    static int x3 = 700;
+    static int x4 = 800;
+    static int x5 = 900;
+
+    static int y1 = 0;
+    static int y2 = 120;
+    static int y3 = 240;
+
     static void DrawUppderZone()
     {
-        Rect(800, 100).FillRounded(10, 10, 1, Color::YELLOW, Color::BLACK);
+        Rect(x5 - x1 - d, y2 - y1 - d).FillRounded(d, d, 1, Color::YELLOW, Color::BLACK);
+    }
+
+    static void DrawZoneX()
+    {
+        Rect(x3 - x1 - d, y3 - y2 - d).FillRounded(d, y2 - y1 + d, 1, Color::GRAY_75, Color::BLACK);
     }
 
     static void Func_Draw()
     {
         DrawUppderZone();
+
+        DrawZoneX();
     }
 
     static Item *items[] =

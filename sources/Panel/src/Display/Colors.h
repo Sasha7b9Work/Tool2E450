@@ -14,7 +14,7 @@ struct Color
     static Color BLUE;              // Синий компонент для настройки
     static Color WHITE;             // Белый
     static Color BLACK;             // Чёрный фон
-    static Color GRAY;
+    static Color GRAY_75;
     static Color YELLOW;
 
     static const int COUNT = 255;

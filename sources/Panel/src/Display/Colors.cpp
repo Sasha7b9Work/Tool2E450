@@ -15,7 +15,7 @@ static uint colors[256] =
     MAKE_COLOR(0x00, 0x00, 0xFF),   // BLUE;
     MAKE_COLOR(0x00, 0x00, 0xFF),   // WHITE;
     MAKE_COLOR(0x00, 0x00, 0x00),   // BLACK;
-    MAKE_COLOR(0x00, 0x00, 0xFF),   // GRAY;
+    MAKE_COLOR(0xC0, 0xC0, 0xC0),   // GRAY_75;
     MAKE_COLOR(0xFF, 0xFF, 0x00),   // YELLOW;
     MAKE_COLOR(0x00, 0x00, 0xFF),
     MAKE_COLOR(0x00, 0x00, 0xFF)
@@ -31,7 +31,7 @@ Color Color::GREEN(5);
 Color Color::BLUE(6);
 Color Color::WHITE(7);
 Color Color::BLACK(8);
-Color Color::GRAY(9);
+Color Color::GRAY_75(9);
 Color Color::YELLOW(10);
 
 
