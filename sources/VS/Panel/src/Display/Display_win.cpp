@@ -229,7 +229,7 @@ void Display::CreateButtons(Frame *frame)
 
 void Display::SetPositionAndSize(Frame *frame)
 {
-    wxSize size = { Display::PHYSICAL_WIDTH + 400, Display::PHYSICAL_HEIGHT };
+    wxSize size = { Display::PHYSICAL_WIDTH, Display::PHYSICAL_HEIGHT };
 
     frame->SetClientSize(size);
     frame->SetMinClientSize(size);
