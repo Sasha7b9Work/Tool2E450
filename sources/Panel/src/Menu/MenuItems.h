@@ -15,6 +15,8 @@ class Item
 public:
     Item() {}
 
+    virtual void Draw() = 0;
+
     static int Height();
 
     // Функция отрисовки
@@ -52,9 +54,19 @@ public:
     Button(TypeButton::E _type, int _x, int _y, pchar text_ru, void (*funcPress)()) :
         Item(), type(_type), text(text_ru), x(_x), y(_y), funcOnPress(funcPress) { }
     virtual void DrawMenuItem(int, int, int, bool) { }
-    void Draw();
+    virtual void Draw() override;
     pchar GetTitle() const;
     void SetTitle(pchar);
+    int X() const
+    {
+        return x;
+    }
+    int Y() const
+    {
+        return y;
+    }
+    int Width() const;
+    int Height() const;
 private:
     TypeButton::E type;
     pchar text;
@@ -97,42 +109,14 @@ public:
 
     void Draw();
 
-    bool OnEventControl(const Control &);
-
-    // Возвращает указатель на выделенный пункт меню
-    Item *SelectedItem() { return items[selectedItem]; }
-
-    // Проверить на корректность номер выделенного итема. Если он больше, чем количество итемов - скорректировать
-    void VerifySelectedItem();
-
-    // Отображает значения параметров на изображении сигнала
-    void DrawParameters() const;
-
-    static const Page *ForCurrentSignal();
-
-    // Запустить тест
-    void StartTest() const;
-
-    // Возвращает true, если текущая страница - страница сигнала
-    static bool IsSignal(Page *);
-
-    // Возвращает количество итемов на странице
-    int NumItems() const;
-
     void DrawItems() const;
 
-protected:
+    int NumItems() const;
 
-    // Возвращает ширину элемента меню с номером num
-    int WidthItem(int num) const;
+protected:
 
     // Указатель на массив элементов меню. Заканчивается нулём.
     Item **items;
 
     void (*funcDraw)();
-
-private:
-
-    // Номер выбранного итема
-    int selectedItem;
 };

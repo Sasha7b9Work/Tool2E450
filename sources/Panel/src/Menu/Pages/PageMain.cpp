@@ -176,19 +176,47 @@ namespace PageMain
 
     }
 
-    Button bMessages
+    static const int x_button1 = 905;
+
+    static Button bMessages
     {
         TypeButton::_1,
-        100, 100,
+        x_button1, 5,
         "—ŒŒ¡Ÿ≈Õ»ﬂ",
         FuncPress_Messages
+    };
+
+    static void FuncPress_Signals()
+    {
+
+    }
+
+    static Button bSignals
+    {
+        TypeButton::_1,
+        x_button1, bMessages.Y() + bMessages.Height() + 5,
+        "—»√Õ¿À€ œÀ ",
+        FuncPress_Signals
+    };
+
+    static void FuncPress_Network()
+    {
+
+    }
+
+    static Button bNetwork
+    {
+        TypeButton::_1,
+        x_button1, bSignals.Y() + bSignals.Height() + 5,
+        "CET‹ MODBUS",
+        FuncPress_Network
     };
 
     static Item *items[] =
     {
         &bMessages,
-//        &bSignals,
-//        &bNetwork,
+        &bSignals,
+        &bNetwork,
         nullptr
     };
 
