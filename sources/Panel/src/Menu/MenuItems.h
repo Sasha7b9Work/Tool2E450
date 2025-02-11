@@ -41,7 +41,8 @@ struct TypeButton
 {
     enum E
     {
-        _1,
+        _1,         // С картинкой
+        _2,         // Серая
         Count
     };
 };

@@ -199,17 +199,39 @@ namespace PageMain
         FuncPress_Signals
     };
 
-    static void FuncPress_Network()
-    {
-
-    }
-
     static Button bNetwork
     {
         TypeButton::_1,
         x_button1, bSignals.Y() + bSignals.Height() + 5,
         "CET‹ MODBUS",
-        FuncPress_Network
+        []()
+        {
+
+        }
+    };
+
+    static const int x_button2 = 710;
+
+    static Button bResetX
+    {
+        TypeButton::_2,
+        x_button2, 400,
+        "—¡–Œ—  ŒŒ–ƒ»Õ¿“€ X",
+        []()
+        {
+
+        }
+    };
+
+    static Button bResetY
+    {
+        TypeButton::_2,
+        x_button2, bResetX.Y() + bResetX.Height() + d,
+        "—¡–Œ—  ŒŒ–ƒ»Õ¿“€ Y",
+        []()
+        {
+
+        }
     };
 
     static Item *items[] =
@@ -217,6 +239,8 @@ namespace PageMain
         &bMessages,
         &bSignals,
         &bNetwork,
+        &bResetX,
+        &bResetY,
         nullptr
     };
 
