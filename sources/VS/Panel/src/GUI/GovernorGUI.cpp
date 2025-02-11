@@ -143,17 +143,17 @@ void GovernorGUI::OnTimer(wxTimerEvent &)
 }
 
 
-void GovernorGUI::FuncRotate(int delta)
+void GovernorGUI::FuncRotate(int)
 {
-    wxCommandEvent event(wxEVT_LEFT_DOWN, delta < 0 ? Key::GovRight : Key::GovLeft);
-    Frame::Self()->OnDown(event);
+//    wxCommandEvent event(wxEVT_LEFT_DOWN, delta < 0 ? Key::GovRight : Key::GovLeft);
+//    Frame::Self()->OnDown(event);
 }
 
 
 void GovernorGUI::FuncPress()
 {
-    wxCommandEvent event(wxEVT_LEFT_DOWN, Key::GovButton);
-    Frame::Self()->OnDown(event);
+//    wxCommandEvent event(wxEVT_LEFT_DOWN, Key::GovButton);
+//    Frame::Self()->OnDown(event);
 }
 
 

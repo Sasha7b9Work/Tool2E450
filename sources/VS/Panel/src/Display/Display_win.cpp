@@ -184,44 +184,27 @@ void Display::CreateFrame()
 
 void Display::CreateButtons(Frame *frame)
 {
-    int x0 = 500;
-    int y0 = 15;
+    wxSize size(100, 50);
 
-    int dX = 10;
-    int dY = 5;
-
-    int w = 65;
-    int h = 25;
-
-    wxSize size(w, h);
-
-    const int NUM_COLS = 5;
-    const int NUM_ROWS = 4;
-
-    static const Key::E keys[NUM_ROWS][NUM_COLS] =
+    static const Key::E keys[4] =
     {
-        { Key::_1,    Key::_2, Key::_3,  Key::Left,  Key::Right },
-        { Key::_4,    Key::_5, Key::_6,  Key::None,  Key::OK    },
-        { Key::_7,    Key::_8, Key::_9,  Key::None,  Key::Esc   },
-        { Key::Minus, Key::_0, Key::Dot, Key::Start, Key::Stop  }
+        Key::_1, Key::_2, Key::_3,  Key::_4
     };
 
-    for (int row = 0; row < NUM_ROWS; row++)
+    const int x0 = 1070;
+    const int dX = 120;
+
+    const int y0 = 90;
+    const int dY = 90;
+
+    for (int i = 0; i < 4; i++)
     {
-        for (int col = 0; col < NUM_COLS; col++)
-        {
-            int x = x0 + (w + dX) * col;
-            int y = y0 + (h + dY) * row;
+        Key::E key = keys[i];
 
-            Key::E key = keys[row][col];
+        int x = x0 + (i / 2) * dX;
+        int y = y0 + (i % 2) * dY;
 
-            if (key == Key::OK || key == Key::Esc)
-            {
-                x -= (size.GetWidth() / 2 + dX / 2);
-            }
-
-            CreateButton(key, frame, { x, y }, size);
-        }
+        CreateButton(key, frame, { x, y }, size);
     }
 
     governorUpper = new GovernorGUI(frame, { 1150, 300 });
