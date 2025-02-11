@@ -67,18 +67,8 @@ file(GLOB CONNECTOR_DEVICE      ../../common/Connector/Device/Messages_.*
                                 ../../common/Connector/Device/Value_.h
                              ../../Panel/src/Connector/Device/*.*)
 file(GLOB DEVICE             ../../Panel/src/Device/*)
-file(GLOB DISPLAY                        src/Display/Display_win.cpp
-                                         src/Display/Colors_win.cpp
-                                ../../common/Display/Colors_.*
-                                ../../common/Display/Console_.*
-                                ../../common/Display/Text_.*
-                                ../../common/Display/Display_.*
-                                ../../common/Display/Indicator.*
-                                ../../common/Display/RedrawingZone.*
-                                ../../common/Display/Primitives_.*
-                                         src/Display/Primitives_win.cpp
-                                ../../common/Display/Symbols.*
-                                ../../common/Display/Text.*)
+file(GLOB DISPLAY            ../../Panel/src/Display/*.*
+                                         src/Display/*.*)
 file(GLOB DISPLAY_FONT          ../../common/Display/Font/*.h
                                 ../../common/Display/Font/*.cpp
                                 ../../common/Display/Font/*.inc
@@ -94,7 +84,7 @@ file(GLOB HARDWARE_HAL       ../../Panel/src/Hardware/HAL/HAL.*
                              ../../Panel/src/Hardware/HAL/HAL_FSMC.cpp
                              ../../Panel/src/Hardware/HAL/HAL_TIM.cpp
                                          src/Hardware/HAL/*.*)
-file(GLOB HARDWARE_KEYBOARD     ../../common/Hardware/Keyboard/Keyboard.h
+file(GLOB HARDWARE_KEYBOARD  ../../Panel/src/Hardware/Keyboard/Keyboard.h
                                          src/Keyboard/Keyboard_win.cpp)
 file(GLOB MENU               ../../Panel/src/Menu/*.*)
 file(GLOB MENU_PAGES         ../../Panel/src/Menu/Pages/*.*)

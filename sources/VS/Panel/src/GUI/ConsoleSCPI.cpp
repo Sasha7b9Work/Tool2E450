@@ -2,7 +2,7 @@
 #include "defines.h"
 #include "GUI/ConsoleSCPI.h"
 #include "GUI/ComPort.h"
-#include "Display/Text_.h"
+#include "Display/Text.h"
 
 #pragma warning(push, 0)
 #include <wx/wx.h>
@@ -21,8 +21,8 @@ static wxTextCtrl *line = nullptr;
 
 static ConsoleSCPI *self = nullptr;
 
-pString ConsoleSCPI::DIRECT_PROMT = ">>> ";
-pString ConsoleSCPI::REVERSE_PROMT = "<<< ";
+pchar ConsoleSCPI::DIRECT_PROMT = ">>> ";
+pchar ConsoleSCPI::REVERSE_PROMT = "<<< ";
 
 
 ConsoleSCPI::ConsoleSCPI(wxFrame *parent) : wxFrame(parent, wxID_ANY, wxT("SCPI"))

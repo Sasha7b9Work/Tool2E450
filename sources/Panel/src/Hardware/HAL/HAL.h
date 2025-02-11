@@ -1,8 +1,6 @@
 // (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #pragma once
-
-
-struct CalibrationSettings;
+#include "Settings/Settings.h"
 
 
 #define ERROR_HANDLER() HAL::ErrorHandler()
@@ -66,3 +64,11 @@ namespace HAL_TIM3
 
     void StopIT();
 };
+
+
+namespace HAL_EEPROM
+{
+    void LoadSettings(Settings *);
+
+    void SaveSettings(Settings *);
+}

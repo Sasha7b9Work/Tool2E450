@@ -1,6 +1,6 @@
 // (c) Aleksandr Shevchenko e-mail : Sasha7b9@tut.by
 #include "defines.h"
-#include "Display/Primitives_.h"
+#include "Display/Primitives.h"
 
 
 #pragma warning(push, 0)

@@ -2,8 +2,8 @@
 #include "defines.h"
 #include "Hardware/HAL/HAL.h"
 #include "Menu/Menu.h"
-#include "Display/Display_.h"
-#include "Hardware/Keyboard/Keyboard_.h"
+#include "Display/Display.h"
+#include "Hardware/Keyboard/Keyboard.h"
 
 
 void init()

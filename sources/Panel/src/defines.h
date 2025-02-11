@@ -45,14 +45,14 @@ inline void EmptyFuncVV() {};
 
 #ifdef WIN32
 
-#define __attribute__(x)
+    #define __attribute__(x)
+    #define WIN32_LEAN_AND_MEAN
 
 #else
 
-#ifndef NULL
-#define NULL 0
-#endif
-//#define nullptr NULL   //-V1059
+    #ifndef NULL
+        #define NULL 0
+    #endif
 
 #endif
 

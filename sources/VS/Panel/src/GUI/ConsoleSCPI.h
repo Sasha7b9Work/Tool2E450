@@ -10,8 +10,8 @@ class ConsoleSCPI : public wxFrame
 {
 public:
 
-    static pString DIRECT_PROMT;
-    static pString REVERSE_PROMT;
+    static pchar DIRECT_PROMT;
+    static pchar REVERSE_PROMT;
 
     static ConsoleSCPI *Self();
     virtual ~ConsoleSCPI();

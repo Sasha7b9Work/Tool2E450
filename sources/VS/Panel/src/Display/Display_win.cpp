@@ -2,11 +2,11 @@
 #include "defines.h"
 #include "Display/Font/Font.h"
 #include "GUI/GovernorGUI.h"
-#include "Display/Primitives_.h"
-#include "Hardware/Keyboard/Keyboard_.h"
-#include "Display/Display_.h"
-#include "Display/Colors_.h"
-#include "Utils/Math_.h"
+#include "Display/Primitives.h"
+#include "Hardware/Keyboard/Keyboard.h"
+#include "Display/Display.h"
+#include "Display/Colors.h"
+#include "Utils/Math.h"
 
 #pragma warning(push, 0)
 #undef CRC

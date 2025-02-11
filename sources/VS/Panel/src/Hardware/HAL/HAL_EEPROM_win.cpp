@@ -13,15 +13,3 @@ void HAL_EEPROM::SaveSettings(Settings *)
 {
 
 }
-
-
-void HAL_EEPROM::EraseSector(uint)
-{
-
-}
-
-
-void HAL_EEPROM::WriteData(uint, void *, uint)
-{
-
-}
