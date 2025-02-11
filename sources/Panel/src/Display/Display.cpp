@@ -23,5 +23,9 @@ void Display::Init()
 
 void Display::Update()
 {
-    Menu::OpenedPage()->DrawMenuItem(0, 0, 100);
+    BeginScene();
+
+    Menu::OpenedPage()->Draw();
+
+    EndScene();
 }

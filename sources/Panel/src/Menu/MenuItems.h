@@ -78,28 +78,22 @@ private:
 };
 
 
-class Page : public Item
+class Page
 {
-    friend struct Channel;
-
 public:
-    Page(Item **_items, void (*_additionalDraw)()) :
-        Item(),
-        items(_items), additionalDraw(_additionalDraw)
+    Page(Item **_items, void (*_funcDraw)()) :
+        items(_items), funcDraw(_funcDraw)
     {}
 
-    virtual void DrawMenuItem(int x, int y, int width, bool selected = false) override;
+    void Draw();
 
-    virtual bool OnEventControl(const Control &) override;
+    bool OnEventControl(const Control &);
 
     // Возвращает указатель на выделенный пункт меню
     Item *SelectedItem() { return items[selectedItem]; }
 
     // Проверить на корректность номер выделенного итема. Если он больше, чем количество итемов - скорректировать
     void VerifySelectedItem();
-
-    // Возвращает true, если страница имеет дополнительную функцию отрисовки
-    bool IsAddition() const { return additionalDraw != nullptr; }
 
     // Отображает значения параметров на изображении сигнала
     void DrawParameters() const;
@@ -123,7 +117,7 @@ protected:
     // Указатель на массив элементов меню. Заканчивается нулём.
     Item **items;
 
-    void (*additionalDraw)();
+    void (*funcDraw)();
 
 private:
 

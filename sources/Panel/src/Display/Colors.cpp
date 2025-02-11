@@ -6,7 +6,8 @@
 
 static uint colors[256] =
 {
-
+    MAKE_COLOR(0x00, 0x00, 0x00),
+    MAKE_COLOR(0x80, 0x80, 0xA0)
 };
 
 
