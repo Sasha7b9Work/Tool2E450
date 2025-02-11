@@ -2,9 +2,8 @@
 #include "defines.h"
 #include "GUI/Application.h"
 #include "GUI/GovernorGUI.h"
-#include "Hardware/Keyboard/Keyboard_.h"
-#include "Utils/Log_.h"
-#include "Display/Text_.h"
+#include "Hardware/Keyboard/Keyboard.h"
+#include "Display/Text.h"
 
 
 const float GovernorGUI::stepDegree = 60.0F;

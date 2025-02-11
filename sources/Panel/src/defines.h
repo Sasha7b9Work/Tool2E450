@@ -62,3 +62,13 @@ inline void EmptyFuncVV() {};
 #define ERROR_VALUE_FLOAT   1.111e29f
 #define ERROR_VALUE_UINT8   255
 #define ERROR_STRING_VALUE  "--.--"
+
+
+struct Coord
+{
+    Coord(int _x = 0, int _y = 0) : x(_x), y(_y)
+    {
+    }
+    int x;
+    int y;
+};

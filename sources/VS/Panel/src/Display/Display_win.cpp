@@ -275,9 +275,3 @@ wxRect Display::GetMaxDisplay()
 
     return result;
 }
-
-
-void Display::Sender::SendToFSMC(int, int)
-{
-
-}

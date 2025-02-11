@@ -4,7 +4,14 @@
 
 namespace Display
 {
+    const int PHYSICAL_WIDTH = 1024;
+    const int PHYSICAL_HEIGHT = 600;
+
     void Init();
 
     void Update();
+
+    void BeginScene(int x = -1, int y = -1);
+
+    void EndScene();
 }

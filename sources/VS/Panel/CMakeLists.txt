@@ -89,7 +89,7 @@ file(GLOB HARDWARE_KEYBOARD  ../../Panel/src/Hardware/Keyboard/Keyboard.h
 file(GLOB MENU               ../../Panel/src/Menu/*.*)
 file(GLOB MENU_PAGES         ../../Panel/src/Menu/Pages/*.*)
 file(GLOB SETTINGS           ../../Panel/src/Settings/*.*)
-file(GLOB UTILS                 ../../common/Utils/*.*)
+file(GLOB UTILS              ../../Panel/src/Utils/*.*)
 
 source_group(_VS/HAL            FILES ${VS_HAL})
 source_group(src                FILES ${SRC})

@@ -3,6 +3,7 @@
 #include "GUI/Application.h"
 #include "GUI/ConsoleSCPI.h"
 #include "Hardware/HAL/HAL.h"
+#include "Hardware/Timer.h"
 
 #undef main
 
