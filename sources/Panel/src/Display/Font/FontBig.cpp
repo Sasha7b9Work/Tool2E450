@@ -19,16 +19,18 @@
 //#include <stdbool.h>
 #include <cstring>
 #include "Display/Font/FontBig.h"
-#include "Display/Primitives_.h"
+#include "Display/Primitives.h"
 #include <cstddef>
 
 using namespace Primitives;
+
+typedef unsigned int uint32_t;
 
 /*!*****************************************************************************
   @brief    Character rows array (32-bit wide)
   @note        Comments:    index, bitmap, spase-mark-space... (chars...)
   */
-static const uint32_t    BigCharRow[] = {
+static const uint    BigCharRow[] = {
     0x00000000,        // 0    00000000'00000000'00000000'00000000        32            (space)
     0x0000003e,        // 1    00000000'00000000'00000000'00111110        26-5-1        (2359)
     0x0000007c,        // 2    00000000'00000000'00000000'01111100        25-5-2        (2359)

@@ -69,10 +69,10 @@ file(GLOB CONNECTOR_DEVICE      ../../common/Connector/Device/Messages_.*
 file(GLOB DEVICE             ../../Panel/src/Device/*)
 file(GLOB DISPLAY            ../../Panel/src/Display/*.*
                                          src/Display/*.*)
-file(GLOB DISPLAY_FONT          ../../common/Display/Font/*.h
-                                ../../common/Display/Font/*.cpp
-                                ../../common/Display/Font/*.inc
-                                ../../common/Display/Font/*.xml)
+file(GLOB DISPLAY_FONT       ../../Panel/src/Display/Font/*.h
+                             ../../Panel/src/Display/Font/*.cpp
+                             ../../Panel/src/Display/Font/*.inc
+                             ../../Panel/src/Display/Font/*.xml)
 file(GLOB DISPLAY_PICTURES   ../../Panel/src/Display/Pictures/*.*)
 file(GLOB GUI                            src/GUI/*)
 file(GLOB HARDWARE           ../../Panel/src/Hardware/*FPGA.*
@@ -81,8 +81,6 @@ file(GLOB HARDWARE           ../../Panel/src/Hardware/*FPGA.*
                              ../../Panel/src/Hardware/Timer.*
                                          src/Hardware/VCP_win.cpp)
 file(GLOB HARDWARE_HAL       ../../Panel/src/Hardware/HAL/HAL.*
-                             ../../Panel/src/Hardware/HAL/HAL_FSMC.cpp
-                             ../../Panel/src/Hardware/HAL/HAL_TIM.cpp
                                          src/Hardware/HAL/*.*)
 file(GLOB HARDWARE_KEYBOARD  ../../Panel/src/Hardware/Keyboard/Keyboard.h
                                          src/Keyboard/Keyboard_win.cpp)
