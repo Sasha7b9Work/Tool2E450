@@ -57,15 +57,6 @@ file(GLOB SRC                ../../Panel/src/defines.h
                              ../../Panel/src/Settings.*
                                          src/Application_win.*
                                          src/main_win.cpp)
-file(GLOB LIBS_MINIZ            ../../common/libs/miniz/miniz_zip.*
-                                ../../common/libs/miniz/miniz.*
-                                ../../common/libs/miniz/miniz_tdef.*
-                                ../../common/libs/miniz/miniz_tinfl.*)
-file(GLOB CONNECTOR_DEVICE      ../../common/Connector/Device/Messages_.*
-                                ../../common/Connector/Device/Handlers_p.*
-                                ../../common/Connector/Device/Transceiver_.h
-                                ../../common/Connector/Device/Value_.h
-                             ../../Panel/src/Connector/Device/*.*)
 file(GLOB DEVICE             ../../Panel/src/Device/*)
 file(GLOB DISPLAY            ../../Panel/src/Display/*.*
                                          src/Display/*.*)
@@ -91,8 +82,6 @@ file(GLOB UTILS              ../../Panel/src/Utils/*.*)
 
 source_group(_VS/HAL            FILES ${VS_HAL})
 source_group(src                FILES ${SRC})
-source_group(libs/miniz         FILES ${LIBS_MINIZ})
-source_group(Connector/Device   FILES ${CONNECTOR_DEVICE})
 source_group(Device             FILES ${DEVICE})
 source_group(Display            FILES ${DISPLAY})
 source_group(Display/Font       FILES ${DISPLAY_FONT})
@@ -116,8 +105,6 @@ set_source_files_properties(
 add_executable(${PROJECT_NAME}
     ${VS_HAL}
     ${SRC}
-    ${LIBS_MINIZ}
-    ${CONNECTOR_DEVICE}
     ${DEVICE}
     ${DISPLAY}
     ${DISPLAY_FONT}
