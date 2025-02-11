@@ -1,3 +1,1 @@
-@echo on
-
-start ..\..\generated\Win32\NFC-Reader-GUI.sln
+start ..\..\generated\GUI\IntelAvto-GUI.sln

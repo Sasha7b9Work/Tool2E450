@@ -76,4 +76,4 @@ extern PinIn  pinQF14;
 extern PinIn  pinQF15;
 extern PinIn  pinKM5;
 extern PinIn  pinKM6;
-extern PinOut
+//extern PinOut
