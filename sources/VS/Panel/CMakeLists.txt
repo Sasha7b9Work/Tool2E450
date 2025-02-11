@@ -71,8 +71,7 @@ file(GLOB HARDWARE           ../../Panel/src/Hardware/*FPGA.*
                              ../../Panel/src/Hardware/VCP.h
                              ../../Panel/src/Hardware/Timer.*
                                          src/Hardware/VCP_win.cpp)
-file(GLOB HARDWARE_HAL       ../../Panel/src/Hardware/HAL/HAL.*
-                                         src/Hardware/HAL/*.*)
+file(GLOB HARDWARE_HAL                   src/Hardware/HAL/*.*)
 file(GLOB HARDWARE_KEYBOARD  ../../Panel/src/Hardware/Keyboard/Keyboard.h
                                          src/Keyboard/Keyboard_win.cpp)
 file(GLOB MENU               ../../Panel/src/Menu/*.*)
