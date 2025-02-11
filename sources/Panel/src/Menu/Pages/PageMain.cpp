@@ -171,8 +171,24 @@ namespace PageMain
         DrawZonePreset();
     }
 
+    static void FuncPress_Messages()
+    {
+
+    }
+
+    Button bMessages
+    {
+        TypeButton::_1,
+        100, 100,
+        "—ŒŒ¡Ÿ≈Õ»ﬂ",
+        FuncPress_Messages
+    };
+
     static Item *items[] =
     {
+        &bMessages,
+//        &bSignals,
+//        &bNetwork,
         nullptr
     };
 

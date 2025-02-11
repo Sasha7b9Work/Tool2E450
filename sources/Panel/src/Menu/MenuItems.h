@@ -35,21 +35,31 @@ protected:
 };
 
 
+struct TypeButton
+{
+    enum E
+    {
+        _1,
+        Count
+    };
+};
+
+
 // Общего назначения
 class Button : public Item
 {
 public:
-    Button(pchar text_ru, void (*funcPress)()) :
-        Item(), funcOnPress(funcPress)
-    {
-        text = text_ru;
-    }
-    virtual void DrawMenuItem(int x, int y, int width, bool selected = false) override;
-    virtual bool OnEventControl(const Control &) override;
+    Button(TypeButton::E _type, int _x, int _y, pchar text_ru, void (*funcPress)()) :
+        Item(), type(_type), text(text_ru), x(_x), y(_y), funcOnPress(funcPress) { }
+    virtual void DrawMenuItem(int, int, int, bool) { }
+    void Draw();
     pchar GetTitle() const;
     void SetTitle(pchar);
 private:
+    TypeButton::E type;
     pchar text;
+    int x;
+    int y;
     void (*funcOnPress)();
 };
 
@@ -108,6 +118,8 @@ public:
 
     // Возвращает количество итемов на странице
     int NumItems() const;
+
+    void DrawItems() const;
 
 protected:
 

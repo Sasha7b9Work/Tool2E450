@@ -6,4 +6,12 @@
 void Page::Draw()
 {
     funcDraw();
+
+    DrawItems();
+}
+
+
+void Page::DrawItems() const
+{
+
 }
