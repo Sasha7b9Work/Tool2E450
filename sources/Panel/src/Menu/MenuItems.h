@@ -83,9 +83,9 @@ class Page : public Item
     friend struct Channel;
 
 public:
-    Page(Item **_items, void (*_additionalDraw)(), void (*_func_start_test)()) :
+    Page(Item **_items, void (*_additionalDraw)()) :
         Item(),
-        items(_items), additionalDraw(_additionalDraw), func_start_test(_func_start_test), selectedItem(0)
+        items(_items), additionalDraw(_additionalDraw)
     {}
 
     virtual void DrawMenuItem(int x, int y, int width, bool selected = false) override;
@@ -125,17 +125,8 @@ protected:
 
     void (*additionalDraw)();
 
-    void (*func_start_test)();
-
 private:
 
     // Номер выбранного итема
     int selectedItem;
-};
-
-
-class PageModes : public Page
-{
-public:
-    PageModes(Item **_items) : Page(_items, nullptr, nullptr) {}
 };

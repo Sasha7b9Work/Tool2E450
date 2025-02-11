@@ -2,6 +2,7 @@
 #include "defines.h"
 #include "Display/Display.h"
 #include "Display/Font/Font.h"
+#include "Menu/Menu.h"
 
 
 namespace Display
@@ -22,5 +23,5 @@ void Display::Init()
 
 void Display::Update()
 {
-
+    Menu::OpenedPage()->DrawMenuItem(0, 0, 100);
 }
