@@ -43,7 +43,8 @@ namespace Display
     // Здесь хранятся указатели на кнопки
     static wxButton *buttons[Key::Count] = { nullptr };
 
-    static GovernorGUI *governor = nullptr;
+    static GovernorGUI *governorUpper = nullptr;
+    static GovernorGUI *governorLower = nullptr;
 
     static bool needStartTimerLong = false;
     static bool needStopTimerLong = false;
@@ -223,13 +224,14 @@ void Display::CreateButtons(Frame *frame)
         }
     }
 
-    governor = new GovernorGUI(frame, { 700, 170 });
+    governorUpper = new GovernorGUI(frame, { 1150, 300 });
+    governorLower = new GovernorGUI(frame, { 1150, 450 });
 }
 
 
 void Display::SetPositionAndSize(Frame *frame)
 {
-    wxSize size = { Display::PHYSICAL_WIDTH, Display::PHYSICAL_HEIGHT };
+    wxSize size = { Display::PHYSICAL_WIDTH + 300, Display::PHYSICAL_HEIGHT };
 
     frame->SetClientSize(size);
     frame->SetMinClientSize(size);
