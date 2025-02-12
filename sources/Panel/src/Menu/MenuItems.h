@@ -58,6 +58,7 @@ struct TypeButton
         _2,         // Серая
         _3,
         _4,
+        _5,
         Count
     };
 };

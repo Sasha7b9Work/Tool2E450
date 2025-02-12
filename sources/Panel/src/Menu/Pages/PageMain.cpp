@@ -319,6 +319,56 @@ namespace PageMain
         }
     };
 
+    int start_x_m = start_x + 55;
+    int start_y_m = start_y + 50;
+
+    static Button bMinusX
+    {
+        TypeButton::_5,
+        start_x_m, start_y_m,
+        "-X",
+        []()
+        {
+
+        }
+    };
+
+    static Button bPlusX
+    {
+        TypeButton::_5,
+        start_x_m + 160, start_y_m,
+        "+X",
+        []()
+        {
+
+        }
+    };
+
+    int start_x_p = start_x_m + 80;
+    int start_y_p = start_y_m - 20;
+
+    static Button bPlusY
+    {
+        TypeButton::_5,
+        start_x_p, start_y_p,
+        "+Y",
+        []()
+        {
+
+        }
+    };
+
+    static Button bMinusY
+    {
+        TypeButton::_5,
+        start_x_p, start_y_p + 30,
+        "-Y",
+        []()
+        {
+
+        }
+    };
+
     static Item *items[] =
     {
         &bMessages,
@@ -332,6 +382,10 @@ namespace PageMain
         &bButtons,
         &bPreset,
         &bShturval,
+        &bMinusX,
+        &bPlusX,
+        &bPlusY,
+        &bMinusY,
         nullptr
     };
 

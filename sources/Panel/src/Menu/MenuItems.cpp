@@ -77,6 +77,10 @@ int Button::Width() const
     {
         return 100;
     }
+    else if (type == TypeButton::_5)
+    {
+        return 70;
+    }
 
     return 100;
 }
@@ -97,7 +101,11 @@ int Button::Height() const
     }
     else if (type == TypeButton::_4)
     {
-        return 30;
+        return 25;
+    }
+    else if (type == TypeButton::_5)
+    {
+        return 25;
     }
 
     return 100;
