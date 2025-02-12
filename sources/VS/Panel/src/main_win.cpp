@@ -4,6 +4,7 @@
 #include "Menu/Menu.h"
 #include "Display/Display.h"
 #include "Hardware/Keyboard/Keyboard.h"
+#include "Device/Messages.h"
 
 
 void init()
@@ -12,6 +13,9 @@ void init()
     Display::Init();
     Keyboard::Init();
     Menu::Init();
+    Messages::Init();
+    Messages::AppendMessage("ÒÎÊÎÂÀß ÇÀÙÈÒÀ ÈÑÒÎ×ÍÈÊÀ ÏÈÒÀÍÈß 24V");
+    Messages::AppendMessage("ÑÎÎÁÙÅÍÈÅ 2");
 }
 
 

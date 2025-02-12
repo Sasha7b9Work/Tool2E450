@@ -5,6 +5,7 @@
 #include "Display/Display.h"
 #include "Display/Text.h"
 #include "Menu/Menu.h"
+#include "Device/Messages.h"
 
 
 using namespace Primitives;
@@ -25,7 +26,7 @@ namespace PageMain
     static int y3 = 230;
     static int y4 = 360;
 
-    static void DrawUppderZone()
+    static void DrawWindowMessages()
     {
         Rect rect(x5 - x1 - d, y2 - y1 - d);
 
@@ -33,7 +34,18 @@ namespace PageMain
 
         Font::Set(TypeFont::GOSTAU16BOLD);
 
-        Text("“Œ Œ¬¿ﬂ «¿Ÿ»“¿ »—“Œ◊Õ» ¿ œ»“¿Õ»ﬂ 24V").Write(rect.X() + d, rect.Y() + d, Color::BLACK);
+        int y = rect.Y() + d;
+
+        for (int i = 0; i < Messages::GetCountMessages(); i++)
+        {
+            char buffer[256];
+
+            Messages::GetMessage(i, buffer);
+
+            Text(buffer).Write(rect.X() + d, y, Color::BLACK);
+
+            y += 20;
+        }
     }
 
     static void DrawZoneX()
@@ -155,7 +167,7 @@ namespace PageMain
 
     static void Func_Draw()
     {
-        DrawUppderZone();
+        DrawWindowMessages();
 
         DrawZoneX();
 

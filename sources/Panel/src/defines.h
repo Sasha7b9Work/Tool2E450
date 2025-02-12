@@ -3,6 +3,9 @@
 #include "no-warnings.h"
 
 
+#define VERSION_BUILD "0.1.113"
+
+
 typedef unsigned int       uint;
 typedef unsigned short     uint16;
 typedef unsigned short     uint16_t;
