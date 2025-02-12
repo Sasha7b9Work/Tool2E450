@@ -45,6 +45,11 @@ namespace PageMain
             Text(buffer).Write(rect.X() + d, y, Color::BLACK);
 
             y += 20;
+
+            if (y > rect.Height())
+            {
+                break;
+            }
         }
     }
 

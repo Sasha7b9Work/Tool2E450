@@ -23,7 +23,7 @@ namespace PageMessages
 
     static void DrawWindowMessages()
     {
-        Rect rect(x5 - x1 - d, y2 - y1 - d);
+        Rect rect(x5 - x1 - d, 590);
 
         rect.FillRounded(d, d, 1, Color::YELLOW, Color::BLACK);
 
@@ -40,6 +40,11 @@ namespace PageMessages
             Text(buffer).Write(rect.X() + d, y, Color::BLACK);
 
             y += 20;
+
+            if (y > rect.Height())
+            {
+                break;
+            }
         }
     }
 
@@ -57,7 +62,7 @@ namespace PageMessages
         "яапня",
         []()
         {
-
+            Messages::Init();
         }
     };
 
