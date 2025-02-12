@@ -133,6 +133,7 @@ Color Button::ColorFill() const
 void Button::Press()
 {
     pressed = true;
+    funcOnPress();
 }
 
 
