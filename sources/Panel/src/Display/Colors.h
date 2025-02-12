@@ -16,6 +16,7 @@ struct Color
     static Color BLACK;             // Чёрный фон
     static Color GRAY_75;
     static Color YELLOW;
+    static Color PRESSED;           // Здесь цвет, которым горит кнопка в нажатом состоянии
 
     static const int COUNT = 255;
 

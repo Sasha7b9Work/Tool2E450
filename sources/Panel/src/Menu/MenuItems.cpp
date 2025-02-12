@@ -98,18 +98,35 @@ int Button::Height() const
 
 Color Button::ColorFill() const
 {
+    Color color = Color::WHITE;
+
     if(type == TypeButton::_1)
     {
-        return Color::WHITE;
+        color = Color::WHITE;
     }
     else if(type == TypeButton::_2)
     {
+        color = Color::GRAY_75;
     }
     else if(type == TypeButton::_3)
     {
+        color = Color::WHITE;
     }
-    
-    return Color::WHITE;
+
+    if (pressed)
+    {
+        uint col_val = color.Value();
+
+        uint8 r = (uint8)(RED_FROM_COLOR(col_val) / 2);
+        uint8 g = (uint8)(GREEN_FROM_COLOR(col_val) / 2);
+        uint8 b = (uint8)(BLUE_FROM_COLOR(col_val) / 2);
+
+        Color::PRESSED.SetValue(MAKE_COLOR(r, g, b));
+
+        color = Color::PRESSED;
+    }
+
+    return color;
 }
 
 
@@ -127,33 +144,12 @@ void Button::Release()
 
 void Button::Draw()
 {
-    if (type == TypeButton::_1)
-    {
-        Rect rect(Width(), Height());
-        rect.FillRounded(x, y, 1, ColorFill(), Color::BLACK);
+    Rect rect(Width(), Height());
+    rect.FillRounded(x, y, 1, ColorFill(), Color::BLACK);
 
-        Font::Set(TypeFont::GOSTAU16BOLD);
+    Font::Set(TypeFont::GOSTAU16BOLD);
 
-        Text(text).Write(x + 5, y + 5, Color::BLACK);
-    }
-    else if(type == TypeButton::_2)
-    {
-        Rect rect(Width(), Height());
-        rect.FillRounded(x, y, 1, Color::GRAY_75, Color::BLACK);
-
-        Font::Set(TypeFont::GOSTAU16BOLD);
-
-        Text(text).Write(x + 5, y + 5, Color::BLACK);
-    }
-    else if (type == TypeButton::_3)
-    {
-        Rect rect(Width(), Height());
-        rect.FillRounded(x, y, 1, Color::WHITE, Color::BLACK);
-
-        Font::Set(TypeFont::GOSTAU16BOLD);
-
-        Text(text).Write(x + 5, y + 5, Color::BLACK);
-    }
+    Text(text).Write(x + 5, y + 5, Color::BLACK);
 }
 
 
