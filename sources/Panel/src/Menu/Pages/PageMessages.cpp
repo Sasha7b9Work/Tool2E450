@@ -23,10 +23,45 @@ namespace PageMessages
         }
     };
 
+    static Button bSignals
+    {
+        TypeButton::_1,
+        x_button1, bMessages.Y() + bMessages.Height() + 5,
+        "—»√Õ¿À€ œÀ ",
+        []()
+        {
+
+        }
+    };
+
+    static Button bPrev
+    {
+        TypeButton::_1,
+        x_button1, 490,
+        "Õ¿«¿ƒ",
+        []()
+        {
+
+        }
+    };
+
+    static Button bNext
+    {
+        TypeButton::_1,
+        x_button1, bPrev.Y() - 5 - bPrev.Height(),
+        "¬œ≈–®ƒ",
+        []()
+        {
+
+        }
+    };
 
     static Item *items[] =
     {
         &bMessages,
+        &bSignals,
+        &bPrev,
+        &bNext,
         nullptr
     };
 

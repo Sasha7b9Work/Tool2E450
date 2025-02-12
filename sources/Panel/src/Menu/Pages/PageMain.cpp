@@ -185,17 +185,15 @@ namespace PageMain
         }
     };
 
-    static void FuncPress_Signals()
-    {
-
-    }
-
     static Button bSignals
     {
         TypeButton::_1,
         x_button1, bMessages.Y() + bMessages.Height() + 5,
         "—»√Õ¿À€ œÀ ",
-        FuncPress_Signals
+        []()
+        {
+
+        }
     };
 
     static Button bNetwork
