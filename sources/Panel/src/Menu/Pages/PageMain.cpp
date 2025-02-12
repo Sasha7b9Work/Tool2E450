@@ -4,6 +4,7 @@
 #include "Display/Primitives.h"
 #include "Display/Display.h"
 #include "Display/Text.h"
+#include "Menu/Menu.h"
 
 
 using namespace Primitives;
@@ -171,11 +172,6 @@ namespace PageMain
         DrawZonePreset();
     }
 
-    static void FuncPress_Messages()
-    {
-
-    }
-
     static const int x_button1 = 905;
 
     static Button bMessages
@@ -183,7 +179,10 @@ namespace PageMain
         TypeButton::_1,
         x_button1, 5,
         "—ŒŒ¡Ÿ≈Õ»ﬂ",
-        FuncPress_Messages
+        []()
+        {
+            Menu::SetOpenedPage(PageMessages::self);
+        }
     };
 
     static void FuncPress_Signals()

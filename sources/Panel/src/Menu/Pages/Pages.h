@@ -7,3 +7,9 @@ namespace PageMain
 {
     extern Page *self;
 }
+
+
+namespace PageMessages
+{
+    extern Page *self;
+}
