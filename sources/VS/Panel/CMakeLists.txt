@@ -19,12 +19,10 @@ include_directories(
     ../../Panel/src/Hardware/HAL
     ../../Panel/src/Hardware
     ../ThirdParty/wxWidgets/include
-    ../../generated/ThirdParty/lib/vc_dll/mswud
+    ../../generated/ThirdParty/lib/vc_lib/mswud
 )
 
-link_directories(../../generated/ThirdParty/lib/vc_dll)
-
-add_definitions(-DSTM32F429xx -DWXUSINGDLL -DGUI)
+add_definitions(-DSTM32F429xx -DGUI)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -MP -Wall")
 
@@ -119,14 +117,15 @@ add_executable(${PROJECT_NAME}
     ${UTILS}
 )
 
-target_link_libraries(${PROJECT_NAME} wxbase32ud)
-target_link_libraries(${PROJECT_NAME} wxmsw32ud_core)
+target_link_libraries(${PROJECT_NAME} ../../../generated/ThirdParty/lib/vc_lib/wxbase32u)
+target_link_libraries(${PROJECT_NAME} ../../../generated/ThirdParty/lib/vc_lib/wxmsw32u_core)
+target_link_libraries(${PROJECT_NAME} ../../../generated/ThirdParty/lib/vc_lib/wxpng)
+target_link_libraries(${PROJECT_NAME} ../../../generated/ThirdParty/lib/vc_lib/wxzlib)
 
 target_link_libraries(${PROJECT_NAME} WinMM.lib)
+target_link_libraries(${PROJECT_NAME} Ws2_32.lib)
 target_link_libraries(${PROJECT_NAME} version.lib)
 target_link_libraries(${PROJECT_NAME} Imm32.Lib)
 target_link_libraries(${PROJECT_NAME} Setupapi.lib)
-
-
-add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND copy ..\\..\\ThirdParty\\lib\\vc_dll\\wxbase32ud_vc_custom.dll $(OutputPath) /Y)
-add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND copy ..\\..\\ThirdParty\\lib\\vc_dll\\wxmsw32ud_core_vc_custom.dll $(OutputPath) /Y)
+target_link_libraries(${PROJECT_NAME} Comctl32.lib)
+target_link_libraries(${PROJECT_NAME} Rpcrt4.lib)
