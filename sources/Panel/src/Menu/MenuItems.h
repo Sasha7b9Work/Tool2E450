@@ -4,8 +4,6 @@
 #include "Display/Colors.h"
 
 
-struct TypeMeasure;
-class Switch;
 struct Control;
 
 
@@ -13,27 +11,42 @@ class Item
 {
     friend class Hint;
 public:
-    Item() {}
+    Item(int _x, int _y) : x(_x), y(_y)
+    {
+    }
 
     virtual void Draw() = 0;
 
-    static int Height();
-
-    // Функция отрисовки
-    virtual void DrawMenuItem(int x, int y, int width, bool selected = false) = 0;
-
-    virtual bool IsParameter() const { return false; }
+    virtual bool IsParameter() const
+    {
+        return false;
+    }
 
     // Функция обработки нажатия кнопки/ручки
-    virtual bool OnEventControl(const Control &) { return false; }
+    virtual bool OnEventControl(const Control &)
+    {
+        return false;
+    }
 
-    Color ColorBackground(bool selected);
+    virtual bool IsButton() const
+    {
+        return false;
+    }
 
-    static Color ColorDraw(bool selected);
+    bool UnderPosition(int x, int y) const;
 
 protected:
 
-    int DeltaTextt() const { return 3; }
+    int DeltaTextt() const
+    {
+        return 3;
+    }
+
+    virtual int Width() const = 0;
+    virtual int Height() const = 0;
+
+    int x = 0;
+    int y = 0;
 };
 
 
@@ -53,50 +66,48 @@ struct TypeButton
 class Button : public Item
 {
 public:
+
     Button(TypeButton::E _type, int _x, int _y, pchar text_ru, void (*funcPress)()) :
-        Item(), type(_type), text(text_ru), x(_x), y(_y), funcOnPress(funcPress) { }
-    virtual void DrawMenuItem(int, int, int, bool) { }
+        Item(_x, _y), type(_type), text(text_ru), funcOnPress(funcPress)
+    {
+    }
+
+    virtual void DrawMenuItem(int, int, int, bool)
+    {
+    }
+
     virtual void Draw() override;
-    int X() const
+
+    virtual bool IsButton() const override
     {
-        return x;
+        return true;
     }
-    int Y() const
-    {
-        return y;
-    }
-    int Width() const;
-    int Height() const;
+
+    virtual int Width() const;
+
+    virtual int Height() const;
+
+    int X() const { return x; }
+
+    int Y() const { return y; }
+
+    Color ColorFill() const;
+
+    // Вызывается при нажатии
+    void Press();
+
+    // Вызывается при отпускании
+    void Release();
+
 private:
+
     TypeButton::E type;
+
     pchar text;
-    int x;
-    int y;
+
+    bool pressed = false;
+
     void (*funcOnPress)();
-};
-
-
-// Общего назначения
-class Choice : public Item
-{
-public:
-    Choice(pchar *_names, void (*funcPress)(), uint8 *_state) :
-        Item(), colorBack(Color::MENU_UNSELECT), state(_state), funcOnPress(funcPress)
-    {
-        names = _names;
-    }
-
-    virtual void DrawMenuItem(int x, int y, int width, bool selected = false) override;
-    virtual bool OnEventControl(const Control &) override;
-    pchar Title() const;
-    int Value() const { return (int)*state; }
-    void SetColorBackground(const Color &color) { colorBack = color; }
-    Color colorBack;        // Этим цветом будем отрисовывать фон в случае Choice для выбора цвета
-private:
-    pchar *names;
-    uint8 *state;
-    void (*funcOnPress)();
-    int NumStates() const;
 };
 
 
@@ -105,13 +116,20 @@ class Page
 public:
     Page(Item **_items, void (*_funcDraw)()) :
         items(_items), funcDraw(_funcDraw)
-    {}
+    {
+    }
 
     void Draw();
 
     void DrawItems() const;
 
     int NumItems() const;
+
+    // Нажали
+    void TouchDown(int x, int y);
+
+    // Отпустили
+    void TouchUp(int x, int y);
 
 protected:
 

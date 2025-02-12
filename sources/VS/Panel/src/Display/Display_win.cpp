@@ -7,6 +7,7 @@
 #include "Display/Display.h"
 #include "Display/Colors.h"
 #include "Utils/Math.h"
+#include "Menu/Menu.h"
 
 #pragma warning(push, 0)
 #undef CRC
@@ -75,17 +76,42 @@ namespace Display
     class Screen : public wxPanel
     {
     public:
+
         Screen(wxWindow *parent) : wxPanel(parent, 320)
         {
             SetMinSize({ Display::PHYSICAL_WIDTH, Display::PHYSICAL_HEIGHT });
             SetDoubleBuffered(true);
             Bind(wxEVT_PAINT, &Screen::OnPaint, this);
+            Bind(wxEVT_LEFT_DOWN, &Screen::OnMouseLeftDown, this);
+            Bind(wxEVT_LEFT_UP, &Screen::OnMouseLeftUp, this);
         }
 
         void OnPaint(wxPaintEvent &)
         {
             wxPaintDC dc(this);
             dc.DrawBitmap(bitmap, 0, 0);
+        }
+
+    private:
+
+        void OnMouseLeftDown(wxMouseEvent &event)
+        {
+            int x = 0;
+            int y = 0;
+
+            event.GetPosition(&x, &y);
+
+            Menu::OpenedPage()->TouchDown(x, y);
+        }
+
+        void OnMouseLeftUp(wxMouseEvent &event)
+        {
+            int x = 0;
+            int y = 0;
+
+            event.GetPosition(&x, &y);
+
+            Menu::OpenedPage()->TouchUp(x, y);
         }
     };
 

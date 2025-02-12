@@ -9,6 +9,32 @@
 using namespace Primitives;
 
 
+bool Item::UnderPosition(int pos_x, int pos_y) const
+{
+    if (pos_x < x)
+    {
+        return false;
+    }
+
+    if (pos_y < y)
+    {
+        return false;
+    }
+
+    if (pos_x > x + Width())
+    {
+        return false;
+    }
+
+    if (pos_y > y + Height())
+    {
+        return false;
+    }
+
+    return true;
+}
+
+
 void Page::Draw()
 {
     funcDraw();
@@ -70,12 +96,41 @@ int Button::Height() const
 }
 
 
+Color Button::ColorFill() const
+{
+    if(type == TypeButton::_1)
+    {
+        return Color::WHITE;
+    }
+    else if(type == TypeButton::_2)
+    {
+    }
+    else if(type == TypeButton::_3)
+    {
+    }
+    
+    return Color::WHITE;
+}
+
+
+void Button::Press()
+{
+    pressed = true;
+}
+
+
+void Button::Release()
+{
+    pressed = false;
+}
+
+
 void Button::Draw()
 {
     if (type == TypeButton::_1)
     {
         Rect rect(Width(), Height());
-        rect.FillRounded(x, y, 1, Color::WHITE, Color::BLACK);
+        rect.FillRounded(x, y, 1, ColorFill(), Color::BLACK);
 
         Font::Set(TypeFont::GOSTAU16BOLD);
 
@@ -98,5 +153,31 @@ void Button::Draw()
         Font::Set(TypeFont::GOSTAU16BOLD);
 
         Text(text).Write(x + 5, y + 5, Color::BLACK);
+    }
+}
+
+
+void Page::TouchDown(int x, int y)
+{
+    for(int i = 0; i < NumItems(); i++)
+    {
+        if(items[i]->UnderPosition(x, y) && items[i]->IsButton())
+        {
+            Button *button = (Button *)items[i];
+            button->Press();
+        }
+    }
+}
+
+
+void Page::TouchUp(int x, int y)
+{
+    for(int i = 0; i < NumItems(); i++)
+    {
+        if(items[i]->UnderPosition(x, y) && items[i]->IsButton())
+        {
+            Button *button = (Button *)items[i];
+            button->Release();
+        }
     }
 }

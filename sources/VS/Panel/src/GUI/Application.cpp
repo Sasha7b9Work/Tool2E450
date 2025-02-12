@@ -4,6 +4,7 @@
 #include "GUI/ConsoleSCPI.h"
 #include "Hardware/HAL/HAL.h"
 #include "Hardware/Timer.h"
+#include "Menu/Menu.h"
 
 #undef main
 
@@ -50,7 +51,7 @@ bool Application::OnInit()
 }
 
 
-Frame::Frame(const wxString& title)
+Frame::Frame(const wxString &title)
     : wxFrame(NULL, wxID_ANY, title)
 {
     SetIcon(wxICON(sample));
@@ -101,7 +102,7 @@ Frame *Frame::Self()
 }
 
 
-void Frame::OnTimer(wxTimerEvent&)
+void Frame::OnTimer(wxTimerEvent &)
 {
     update();
 
@@ -133,13 +134,13 @@ void Frame::DrawFPS()
 }
 
 
-void Frame::OnSize(wxCommandEvent&)
+void Frame::OnSize(wxCommandEvent &)
 {
 
 }
 
 
-void Frame::OnQuit(wxCommandEvent& WXUNUSED(event))
+void Frame::OnQuit(wxCommandEvent &WXUNUSED(event))
 {
     Close(true);
 }
@@ -155,7 +156,7 @@ void Frame::OnClose(wxCloseEvent &)
 }
 
 
-void Frame::OnAbout(wxCommandEvent& WXUNUSED(event))
+void Frame::OnAbout(wxCommandEvent &WXUNUSED(event))
 {
     wxMessageBox(wxString::Format
     (
