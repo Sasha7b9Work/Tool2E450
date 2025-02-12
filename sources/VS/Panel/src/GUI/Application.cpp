@@ -83,7 +83,7 @@ Frame::Frame(const wxString &title)
 
     self = this;
 
-    ConsoleSCPI::Self()->Show();
+    ConsoleSCPI::Self()->Hide();
 }
 
 
