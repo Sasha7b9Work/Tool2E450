@@ -178,3 +178,17 @@ void Page::TouchUp(int x, int y)
         }
     }
 }
+
+
+void Page::OnEventPage()
+{
+    for (int i = 0; i < NumItems(); i++)
+    {
+        if (items[i]->IsButton())
+        {
+            Button *button = (Button *)items[i];
+
+            button->Release();
+        }
+    }
+}

@@ -19,6 +19,8 @@ Page *Menu::OpenedPage()
 void Menu::SetOpenedPage(Page *page)
 {
     opened_page = page;
+
+    page->OnEventPage();
 }
 
 

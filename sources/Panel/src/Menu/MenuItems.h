@@ -131,6 +131,8 @@ public:
     // Отпустили
     void TouchUp(int x, int y);
 
+    void OnEventPage();
+
 protected:
 
     // Указатель на массив элементов меню. Заканчивается нулём.

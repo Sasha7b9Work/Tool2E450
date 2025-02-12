@@ -2,13 +2,45 @@
 #include "defines.h"
 #include "Menu/Pages/Pages.h"
 #include "Menu/Menu.h"
+#include "Display/Primitives.h"
+#include "Display/Font/Font.h"
+#include "Device/Messages.h"
+#include "Display/Text.h"
+
+
+using namespace Primitives;
 
 
 namespace PageMessages
 {
+    static int d = 5;
+
+    static int x1 = 0;
+    static int x5 = 900;
+
+    static int y1 = 0;
+    static int y2 = 100;
+
     static void DrawWindowMessages()
     {
+        Rect rect(x5 - x1 - d, y2 - y1 - d);
 
+        rect.FillRounded(d, d, 1, Color::YELLOW, Color::BLACK);
+
+        Font::Set(TypeFont::GOSTAU16BOLD);
+
+        int y = rect.Y() + d;
+
+        for (int i = 0; i < Messages::GetCountMessages(); i++)
+        {
+            char buffer[256];
+
+            Messages::GetMessage(i, buffer);
+
+            Text(buffer).Write(rect.X() + d, y, Color::BLACK);
+
+            y += 20;
+        }
     }
 
     static void Func_Draw()
