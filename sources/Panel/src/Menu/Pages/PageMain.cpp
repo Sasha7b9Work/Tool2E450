@@ -120,6 +120,10 @@ namespace PageMain
 
         Rect rect_gray(rect.Width() - d * 2, 85);
         rect_gray.FillRounded(rect.X() + d, rect.Y() + 135, 1, Color::GRAY_75, Color::BLACK);
+
+        Font::Set(TypeFont::GOSTB28B);
+
+        Text("0    ММ/МИН").Write(rect_gray.X() + 30, rect_gray.Y() + 10, Color::BLACK);
     }
 
     // Преднабор координаты X

@@ -18,8 +18,6 @@ enum
 {
     FILE_SIZE = wxID_HIGHEST + 1,
     FILE_QUIT = wxID_EXIT,
-    TOOL_SCPI,
-    TOOL_CONVERT_TO_ARRAY,
     HELP_ABOUT = wxID_ABOUT
 };
 
@@ -60,16 +58,11 @@ Frame::Frame(const wxString &title)
     //fileMenu->Append(File_Size, "&Size", "Resize screen");
     fileMenu->Append(FILE_QUIT, "E&xit\tAlt-X", "Quit this program");
 
-    wxMenu *toolsMenu = new wxMenu;
-    toolsMenu->Append(TOOL_SCPI, "SCPI");
-    toolsMenu->Append(TOOL_CONVERT_TO_ARRAY, "Конвертировать в массив C++");
-
     wxMenu *helpMenu = new wxMenu;
     helpMenu->Append(HELP_ABOUT, "&About\tF1", "Show about dialog");
 
     wxMenuBar *menuBar = new wxMenuBar();
     menuBar->Append(fileMenu, "&File");
-    menuBar->Append(toolsMenu, "Инструменты");
     menuBar->Append(helpMenu, "&Help");
 
     SetMenuBar(menuBar);
@@ -77,8 +70,6 @@ Frame::Frame(const wxString &title)
     CreateStatusBar(2);
     SetStatusText("Welcome to wxWidgets!");
 
-    Bind(wxEVT_MENU, &Frame::OnSCPI, this, TOOL_SCPI);
-    Bind(wxEVT_MENU, &Frame::OnConvertToArray, this, TOOL_CONVERT_TO_ARRAY);
     Bind(wxEVT_MENU, &Frame::OnQuit, this, FILE_QUIT);
     Bind(wxEVT_MENU, &Frame::OnSize, this, FILE_SIZE);
     Bind(wxEVT_MENU, &Frame::OnAbout, this, HELP_ABOUT);
