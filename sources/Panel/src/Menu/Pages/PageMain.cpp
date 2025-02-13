@@ -136,16 +136,23 @@ namespace PageMain
         Font::Set(TypeFont::GOSTAU16BOLD);
 
         Text("ПРЕДНАБОР КООРДИНАТЫ X").Write(rect.X() + d, rect.Y() + d, Color::BLACK);
-
-        {
-            Rect rect_gray(rect.Width() - d * 4, rect.Height() - 50);
-            rect_gray.FillRounded(rect.X() + d * 2, rect.Y() + 40, 1, Color::GRAY_75, Color::BLACK);
-
-            Font::Set(TypeFont::GOSTB28B);
-
-            Text("0.000").Write(rect_gray.X() + d, rect_gray.Y() + d, Color::BLACK);
-        }
     }
+
+    static Button bPresetX
+    {
+        TypeButton::_Preset,
+        d + x3 + d * 2, d + y2 + 40,
+        "",
+        []()
+        {
+
+        }
+        ,
+        [](int _x, int _y)
+        {
+            Text("0.000").Write(_x + 10, _y + 10, Color::BLACK);
+        }
+    };
 
     // Преднабор координаты Y
     static void DrawZonePresetY()
@@ -156,16 +163,23 @@ namespace PageMain
         Font::Set(TypeFont::GOSTAU16BOLD);
 
         Text("ПРЕДНАБОР КООРДИНАТЫ Y").Write(rect.X() + d, rect.Y() + d, Color::BLACK);
-
-        {
-            Rect rect_gray(rect.Width() - d * 4, rect.Height() - 50);
-            rect_gray.FillRounded(rect.X() + d * 2, rect.Y() + 40, 1, Color::GRAY_75, Color::BLACK);
-
-            Font::Set(TypeFont::GOSTB28B);
-
-            Text("0.000").Write(rect_gray.X() + d, rect_gray.Y() + d, Color::BLACK);
-        }
     }
+
+    static Button bPresetY
+    {
+        TypeButton::_Preset,
+        d + x3 + d * 2, y3 - y2 + 40,
+        "",
+        []()
+        {
+
+        }
+        ,
+        [](int _x, int _y)
+        {
+            Text("0.000").Write(_x + 10, _y + 10, Color::BLACK);
+        }
+    };
 
     // Преднабор
     static void DrawZonePreset()
@@ -410,6 +424,8 @@ namespace PageMain
         &bPlusX,
         &bPlusY,
         &bMinusY,
+        &bPresetX,
+        &bPresetY,
         nullptr
     };
 

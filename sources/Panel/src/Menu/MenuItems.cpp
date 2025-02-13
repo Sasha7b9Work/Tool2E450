@@ -68,7 +68,7 @@ int Button::Width() const
 {
     const int width[TypeButton::Count] =
     {
-        112, 185, 185, 100, 70, 100
+        112, 185, 185, 100, 70, 200
     };
 
     return width[type];
@@ -78,7 +78,7 @@ int Button::Height() const
 {
     const int height[TypeButton::Count] =
     {
-        105, 35, 30, 25, 25, 100
+        105, 35, 30, 25, 25, 75
     };
 
     return height[type];
