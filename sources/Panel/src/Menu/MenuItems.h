@@ -98,18 +98,8 @@ public:
     // Вызывается при отпускании
     void Release();
 
-    // Активировать - кнопка будет реагировать на воздействие
-    void Activate()
-    {
-        active = true;
-    }
-
-    // Деактивировать - кнопка не будет реагировать на воздействие
-    void Deactivate()
-    {
-        Release();
-        active = false;
-    }
+    // Активировать/деактивировать - кнопка не будет реагировать на воздействие
+    void ChangeActive(bool active);
 
 private:
 
@@ -117,9 +107,9 @@ private:
 
     pchar text;
 
-    bool pressed = false;
+    bool is_pressed = false;
 
-    bool active = true;
+    bool is_active = true;
 
     void (*funcOnPress)();
 

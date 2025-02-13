@@ -94,7 +94,7 @@ Color Button::ColorFill() const
 
     Color color = colors[type];
 
-    if (pressed)
+    if (is_pressed)
     {
         uint col_val = color.Value();
 
@@ -113,9 +113,9 @@ Color Button::ColorFill() const
 
 void Button::Press()
 {
-    if (active)
+    if (is_active)
     {
-        pressed = true;
+        is_pressed = true;
         funcOnPress();
     }
 }
@@ -123,9 +123,9 @@ void Button::Press()
 
 void Button::Release()
 {
-    if (active)
+    if (is_active)
     {
-        pressed = false;
+        is_pressed = false;
     }
 }
 
@@ -183,4 +183,15 @@ void Page::OnEventPage()
             button->Release();
         }
     }
+}
+
+
+void Button::ChangeActive(bool activate)
+{
+    if(!activate)
+    {
+        Release();
+    }
+
+    is_active = activate;
 }

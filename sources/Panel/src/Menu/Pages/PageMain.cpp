@@ -27,6 +27,8 @@ namespace PageMain
     static int y3 = 230;
     static int y4 = 360;
 
+    static void ChangeActiveAllButtons(bool active);
+
     static void DrawWindowMessages()
     {
         Rect rect(x5 - x1 - d, y2 - y1 - d);
@@ -145,7 +147,7 @@ namespace PageMain
         "",
         []()
         {
-
+            ChangeActiveAllButtons(false);
         }
         ,
         [](int _x, int _y)
@@ -172,7 +174,7 @@ namespace PageMain
         "",
         []()
         {
-
+            ChangeActiveAllButtons(false);
         }
         ,
         [](int _x, int _y)
@@ -231,10 +233,7 @@ namespace PageMain
         TypeButton::_1,
         x_button1, bMessages.Y() + bMessages.Height() + 5,
         "ÑÈÃÍÀËÛ ÏËÊ",
-        []()
-        {
-
-        }
+        []() { }
         , nullptr
     };
 
@@ -243,10 +242,7 @@ namespace PageMain
         TypeButton::_1,
         x_button1, bSignals.Y() + bSignals.Height() + 5,
         "CETÜ MODBUS",
-        []()
-        {
-
-        }
+        []() { }
         , nullptr
     };
 
@@ -257,10 +253,7 @@ namespace PageMain
         TypeButton::_2,
         x_button2, 400,
         "ÑÁÐÎÑ ÊÎÎÐÄÈÍÀÒÛ X",
-        []()
-        {
-
-        }
+        []() { }
         , nullptr
     };
 
@@ -432,4 +425,17 @@ namespace PageMain
     static Page page(items, Func_Draw);
 
     Page *self = &page;
+
+    static void ChangeActiveAllButtons(bool active)
+    {
+        for (int i = 0; items[i] != nullptr; i++)
+        {
+            if (items[i]->IsButton())
+            {
+                Button *button = (Button *)items[i];
+
+                button->ChangeActive(active);
+            }
+        }
+    }
 }
