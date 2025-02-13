@@ -47,7 +47,7 @@ struct Control
 
 namespace Keyboard
 {
-    bool Init();
+    void Init();
 
     // Возвращает true, если есть событыия
     bool Empty();

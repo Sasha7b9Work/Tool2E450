@@ -42,7 +42,7 @@ int Messages::GetCountMessages()
 
     for (int i = 0; i < SIZE_BUFFER; i++)
     {
-        if (buffer[i] == -1)
+        if (buffer[i] == (char)-1)
         {
             first_empty = i;
         }
@@ -81,7 +81,7 @@ int Messages::GetEmptySpace()
 {
     for (int i = 0; i < SIZE_BUFFER; i++)
     {
-        if (buffer[i] == -1)
+        if (buffer[i] == (char)-1)
         {
             return SIZE_BUFFER - i;
         }
@@ -94,7 +94,7 @@ char *Messages::FirstEmpbyByte()
 {
     for (int i = 0; i < SIZE_BUFFER; i++)
     {
-        if (buffer[i] == -1)
+        if (buffer[i] == (char)-1)
         {
             return &buffer[i];
         }
@@ -108,12 +108,12 @@ char *Messages::GetMessage(int i)
 {
     if (i == 0)
     {
-        return (buffer[0] == -1) ? nullptr : buffer;
+        return (buffer[0] == (char)-1) ? nullptr : buffer;
     }
 
     for (int byte = 0; byte < SIZE_BUFFER; byte++)
     {
-        if (buffer[byte] == -1)
+        if (buffer[byte] == (char)-1)
         {
             return nullptr;
         }
@@ -124,7 +124,7 @@ char *Messages::GetMessage(int i)
 
             if (i == 0)
             {
-                return (buffer[byte + 1] == -1) ? nullptr : &buffer[byte + 1];
+                return (buffer[byte + 1] == (char)-1) ? nullptr : &buffer[byte + 1];
             }
         }
     }

@@ -3,6 +3,13 @@
 #include "defines.h"
 
 
+#define MAKE_COLOR(r, g, b)     ((uint)((r) | ((g) << 8) | ((b) << 16)))
+
+#define BLUE_FROM_COLOR(color)   ((uint8)(((color) >> 16) & 0xFF))
+#define GREEN_FROM_COLOR(color) ((uint8)(((color) >> 8) & 0xFF))
+#define RED_FROM_COLOR(color)  ((uint8)((color) & 0xFF))
+
+
 struct Color
 {
     static Color FILL;              // ÷вет белых надписей
@@ -28,12 +35,10 @@ struct Color
     uint8 Index() const { return index;  }
 
     void SetValue(uint value) const { Value() = value; }
-    void SetValue(uint8 red, uint8 green, uint8 blue) const { Value() = Make(red, green, blue); }
+    void SetValue(uint8 red, uint8 green, uint8 blue) const { Value() = MAKE_COLOR(red, green, blue); }
 
     // —сылка на значение
     uint &Value() const;
-
-    static uint Make(uint8 r, uint8 g, uint8 b) { return ((uint)((b) | ((g) << 8) | ((r) << 16))); }
 
     uint8 GetRED() const;
     uint8 GetGREEN() const;
@@ -43,14 +48,3 @@ private:
 
     uint8 index;
 };
-
-
-#ifdef WIN32
-
-    #define MAKE_COLOR(r, g, b)     ((uint)((r) | ((g) << 8) | ((b) << 16)))
-
-    #define BLUE_FROM_COLOR(color)   ((uint8)(((color) >> 16) & 0xFF))
-    #define GREEN_FROM_COLOR(color) ((uint8)(((color) >> 8) & 0xFF))
-    #define RED_FROM_COLOR(color)  ((uint8)((color) & 0xFF))
-
-#endif

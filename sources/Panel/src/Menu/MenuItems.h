@@ -86,9 +86,9 @@ public:
         return true;
     }
 
-    virtual int Width() const;
+    virtual int Width() const override;
 
-    virtual int Height() const;
+    virtual int Height() const override;
 
     int X() const { return x; }
 

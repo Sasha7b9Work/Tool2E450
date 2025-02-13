@@ -4,6 +4,7 @@
 #include "Display/Primitives.h"
 #include "Display/Font/Font.h"
 #include "Display/Text.h"
+#include "Display/Colors.h"
 
 
 using namespace Primitives;

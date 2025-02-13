@@ -46,8 +46,11 @@ file(GLOB LIBS_HAL          ../common/libs/STM32Cube_F4/Drivers/STM32F4xx_HAL_Dr
 
 file(GLOB SRC                         src/*.h src/*.cpp)
 file(GLOB DEVICE                      src/Device/*.*)
+file(GLOB DISPLAY                     src/Display/*.*)
 file(GLOB HARDWARE_CMSIS              src/Hardware/CMSIS/*.*)
+file(GLOB HARDWARE_DISPLAY            src/Hardware/Display/*.*)
 file(GLOB HARDWARE_HAL                src/Hardware/HAL/*)
+file(GLOB HARDWARE_KEYBOARD           src/Hardware/Keyboard/*.*)
 
 set_source_files_properties(${LIBS_FATFS} ${LIBS_HAL}
     src/Hardware/CMSIS/system_stm32f4xx.c
@@ -56,13 +59,19 @@ set_source_files_properties(${LIBS_FATFS} ${LIBS_HAL}
 source_group(libs/HAL           FILES ${LIBS_HAL})
 source_group(src                FILES ${SRC})
 source_group(Device             FILES ${DEVICE})
+source_group(Display            FILES ${DISPLAY})
 source_group(Hardware/CMSIS     FILES ${HARDWARE_CMSIS})
+source_group(Hardware/Display   FILES ${HARDWARE_DISPLAY})
 source_group(Hardware/HAL       FILES ${HARDWARE_HAL})
+source_group(Hardware/Keyboard  FILES ${HARDWARE_KEYBOARD})
 
 add_library(${PROJECT_NAME}
     ${LIBS_HAL}
     ${SRC}
     ${DEVICE}
+    ${DISPLAY}
     ${HARDWARE_CMSIS}
+    ${HARDWARE_DISPLAY}
     ${HARDWARE_HAL}
+    ${HARDWARE_KEYBOARD}
 )

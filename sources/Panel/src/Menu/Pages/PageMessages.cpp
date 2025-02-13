@@ -18,9 +18,6 @@ namespace PageMessages
     static int x1 = 0;
     static int x5 = 900;
 
-    static int y1 = 0;
-    static int y2 = 100;
-
     static void DrawWindowMessages()
     {
         Rect rect(x5 - x1 - d, 590);

@@ -60,7 +60,11 @@ file(GLOB SRC                ../../Panel/src/defines.h
                                          src/Application_win.*
                                          src/main_win.cpp)
 file(GLOB DEVICE             ../../Panel/src/Device/*)
-file(GLOB DISPLAY            ../../Panel/src/Display/*.*
+file(GLOB DISPLAY            ../../Panel/src/Display/*.h
+                             ../../Panel/src/Display/Colors.*
+                             ../../Panel/src/Display/Display.*
+                             ../../Panel/src/Display/Text.*
+                             ../../Panel/src/Display/Primitives.*
                                          src/Display/*.*)
 file(GLOB DISPLAY_FONT       ../../Panel/src/Display/Font/*.h
                              ../../Panel/src/Display/Font/*.cpp

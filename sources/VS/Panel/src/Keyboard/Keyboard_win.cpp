@@ -30,9 +30,8 @@ namespace Keyboard
 }
 
 
-bool Keyboard::Init()
+void Keyboard::Init()
 {
-    return true;
 }
 
 

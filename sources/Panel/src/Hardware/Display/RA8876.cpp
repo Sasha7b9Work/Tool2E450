@@ -1,14 +1,34 @@
 #include "defines.h"
 #include "stm32f4xx.h"
 #include "Hardware/Display/RA8876.h"
-//#include "stm32f429_gpio.h"
-//#include "stm32f429_usart.h"
+
+
+#ifdef WIN32
+	#pragma warning(push, 0)
+#endif
+
+
+namespace Display
+{
+	void InitHardware()
+	{
+
+	}
+
+	void BeginScene(int, int)
+	{
+
+	}
+
+	void EndScene()
+	{
+
+	}
+}
 
 
 #define LCD_HW_RESET_LOW  GPIOB->BSRR |= (0x1UL << 29)
 #define LCD_HW_RESET_HIGH GPIOB->BSRR |= (0x1UL << 13)
-
-
 
 
 void delay_us (unsigned long i)
@@ -4996,5 +5016,6 @@ void Text_cursor_initial(void)
 }
 
 
-
-
+#ifdef WIN32
+	#pragma warning(pop)
+#endif
