@@ -68,7 +68,7 @@ int Button::Width() const
 {
     const int width[TypeButton::Count] =
     {
-        112, 185, 185, 100, 70, 200
+        112, 185, 185, 100, 70, 250
     };
 
     return width[type];
@@ -78,7 +78,7 @@ int Button::Height() const
 {
     const int height[TypeButton::Count] =
     {
-        105, 35, 30, 25, 25, 75
+        105, 35, 30, 25, 25, 80
     };
 
     return height[type];
@@ -123,10 +123,7 @@ void Button::Press()
 
 void Button::Release()
 {
-    if (is_active)
-    {
-        is_pressed = false;
-    }
+    is_pressed = false;
 }
 
 
@@ -153,7 +150,11 @@ void Page::TouchDown(int x, int y)
         if(items[i]->UnderPosition(x, y) && items[i]->IsButton())
         {
             Button *button = (Button *)items[i];
-            button->Press();
+            if (button->IsActive())
+            {
+                button->Press();
+                return;
+            }
         }
     }
 }

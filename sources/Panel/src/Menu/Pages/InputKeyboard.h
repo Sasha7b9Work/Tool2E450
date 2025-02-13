@@ -9,4 +9,6 @@ namespace InputKeyboard
     void Activate();
 
     void Deactivate();
+
+    void Draw();
 }

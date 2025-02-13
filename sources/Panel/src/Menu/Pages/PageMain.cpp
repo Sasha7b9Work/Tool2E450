@@ -148,6 +148,7 @@ namespace PageMain
         []()
         {
             ChangeActiveAllButtons(false);
+            InputKeyboard::Activate();
         }
         ,
         [](int _x, int _y)
@@ -170,11 +171,12 @@ namespace PageMain
     static Button bPresetY
     {
         TypeButton::_Preset,
-        d + x3 + d * 2, y3 - y2 + 40,
+        d + x3 + d * 2, y3 + d + 40,
         "",
         []()
         {
             ChangeActiveAllButtons(false);
+            InputKeyboard::Activate();
         }
         ,
         [](int _x, int _y)
@@ -212,6 +214,11 @@ namespace PageMain
         DrawZonePresetY();              // Преднабор Y
 
         DrawZonePreset();
+
+        if (InputKeyboard::IsActive())
+        {
+            InputKeyboard::Draw();
+        }
     }
 
     static const int x_button1 = 905;

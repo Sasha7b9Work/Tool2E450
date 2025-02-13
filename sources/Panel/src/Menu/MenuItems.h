@@ -101,6 +101,8 @@ public:
     // Активировать/деактивировать - кнопка не будет реагировать на воздействие
     void ChangeActive(bool active);
 
+    bool IsActive() const { return is_active; }
+
 private:
 
     TypeButton::E type;
