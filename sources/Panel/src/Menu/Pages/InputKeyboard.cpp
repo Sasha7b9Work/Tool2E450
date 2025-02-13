@@ -42,6 +42,8 @@ void InputKeyboard::Deactivate()
 void InputKeyboard::Draw()
 {
     Rect(width, height).FillRounded(X(), Y(), 1, Color::GRAY_75, Color::BLACK);
+
+    static const pchar[]
 }
 
 

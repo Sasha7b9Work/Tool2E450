@@ -68,7 +68,7 @@ int Button::Width() const
 {
     const int width[TypeButton::Count] =
     {
-        112, 185, 185, 100, 70, 250
+        112, 185, 185, 100, 70, 250, 60
     };
 
     return width[type];
@@ -78,7 +78,7 @@ int Button::Height() const
 {
     const int height[TypeButton::Count] =
     {
-        105, 35, 30, 25, 25, 80
+        105, 35, 30, 25, 25, 80, 30
     };
 
     return height[type];
@@ -89,7 +89,7 @@ Color Button::ColorFill() const
 {
     const Color colors[TypeButton::Count] =
     {
-        Color::WHITE, Color::GRAY_75, Color::WHITE, Color::WHITE, Color::WHITE, Color::GRAY_75
+        Color::WHITE, Color::GRAY_75, Color::WHITE, Color::WHITE, Color::WHITE, Color::GRAY_75, Color::WHITE
     };
 
     Color color = colors[type];
