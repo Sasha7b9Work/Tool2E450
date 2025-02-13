@@ -59,6 +59,7 @@ struct TypeButton
         _3,
         _4,
         _5,
+        _Preset,    // Для вызова окна ввода преднабора
         Count
     };
 };
@@ -101,6 +102,19 @@ public:
     // Вызывается при отпускании
     void Release();
 
+    // Активировать - кнопка будет реагировать на воздействие
+    void Activate()
+    {
+        active = true;
+    }
+
+    // Деактивировать - кнопка не будет реагировать на воздействие
+    void Deactivate()
+    {
+        Release();
+        active = false;
+    }
+
 private:
 
     TypeButton::E type;
@@ -108,6 +122,8 @@ private:
     pchar text;
 
     bool pressed = false;
+
+    bool active = true;
 
     void (*funcOnPress)();
 };

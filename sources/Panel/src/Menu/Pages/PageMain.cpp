@@ -6,6 +6,7 @@
 #include "Display/Text.h"
 #include "Menu/Menu.h"
 #include "Device/Messages.h"
+#include "Menu/Pages/InputKeyboard.h"
 
 
 using namespace Primitives;
@@ -136,12 +137,14 @@ namespace PageMain
 
         Text("ПРЕДНАБОР КООРДИНАТЫ X").Write(rect.X() + d, rect.Y() + d, Color::BLACK);
 
-        Rect rect_gray(rect.Width() - d * 4, rect.Height() - 50);
-        rect_gray.FillRounded(rect.X() + d * 2, rect.Y() + 40, 1, Color::GRAY_75, Color::BLACK);
+        {
+            Rect rect_gray(rect.Width() - d * 4, rect.Height() - 50);
+            rect_gray.FillRounded(rect.X() + d * 2, rect.Y() + 40, 1, Color::GRAY_75, Color::BLACK);
 
-        Font::Set(TypeFont::GOSTB28B);
+            Font::Set(TypeFont::GOSTB28B);
 
-        Text("0.000").Write(rect_gray.X() + d, rect_gray.Y() + d, Color::BLACK);
+            Text("0.000").Write(rect_gray.X() + d, rect_gray.Y() + d, Color::BLACK);
+        }
     }
 
     // Преднабор координаты Y
@@ -154,12 +157,14 @@ namespace PageMain
 
         Text("ПРЕДНАБОР КООРДИНАТЫ Y").Write(rect.X() + d, rect.Y() + d, Color::BLACK);
 
-        Rect rect_gray(rect.Width() - d * 4, rect.Height() - 50);
-        rect_gray.FillRounded(rect.X() + d * 2, rect.Y() + 40, 1, Color::GRAY_75, Color::BLACK);
+        {
+            Rect rect_gray(rect.Width() - d * 4, rect.Height() - 50);
+            rect_gray.FillRounded(rect.X() + d * 2, rect.Y() + 40, 1, Color::GRAY_75, Color::BLACK);
 
-        Font::Set(TypeFont::GOSTB28B);
+            Font::Set(TypeFont::GOSTB28B);
 
-        Text("0.000").Write(rect_gray.X() + d, rect_gray.Y() + d, Color::BLACK);
+            Text("0.000").Write(rect_gray.X() + d, rect_gray.Y() + d, Color::BLACK);
+        }
     }
 
     // Преднабор
@@ -186,9 +191,9 @@ namespace PageMain
 
         DrawZoneFeedManagement();
 
-        DrawZonePresetX();
+        DrawZonePresetX();              // Преднабор X
 
-        DrawZonePresetY();
+        DrawZonePresetY();              // Преднабор Y
 
         DrawZonePreset();
     }

@@ -65,69 +65,33 @@ int Page::NumItems() const
 
 int Button::Width() const
 {
-    if (type == TypeButton::_1)
+    const int width[TypeButton::Count] =
     {
-        return 112;
-    }
-    else if (type == TypeButton::_2 || type == TypeButton::_3)
-    {
-        return 185;
-    }
-    else if (type == TypeButton::_4)
-    {
-        return 100;
-    }
-    else if (type == TypeButton::_5)
-    {
-        return 70;
-    }
+        112, 185, 185, 100, 70, 100
+    };
 
-    return 100;
+    return width[type];
 }
 
 int Button::Height() const
 {
-    if (type == TypeButton::_1)
+    const int height[TypeButton::Count] =
     {
-        return 105;
-    }
-    else if (type == TypeButton::_2)
-    {
-        return 35;
-    }
-    else if (type == TypeButton::_3)
-    {
-        return 30;
-    }
-    else if (type == TypeButton::_4)
-    {
-        return 25;
-    }
-    else if (type == TypeButton::_5)
-    {
-        return 25;
-    }
+        105, 35, 30, 25, 25, 100
+    };
 
-    return 100;
+    return height[type];
 }
 
 
 Color Button::ColorFill() const
 {
-    Color color = Color::WHITE;
+    const Color colors[TypeButton::Count] =
+    {
+        Color::WHITE, Color::GRAY_75, Color::WHITE, Color::WHITE, Color::WHITE, Color::WHITE
+    };
 
-    if(type == TypeButton::_1)
-    {
-        color = Color::WHITE;
-    }
-    else if(type == TypeButton::_2)
-    {
-        color = Color::GRAY_75;
-    }
-    else if(type == TypeButton::_3)
-    {
-        color = Color::WHITE;
-    }
+    Color color = colors[type];
 
     if (pressed)
     {
@@ -148,14 +112,20 @@ Color Button::ColorFill() const
 
 void Button::Press()
 {
-    pressed = true;
-    funcOnPress();
+    if (active)
+    {
+        pressed = true;
+        funcOnPress();
+    }
 }
 
 
 void Button::Release()
 {
-    pressed = false;
+    if (active)
+    {
+        pressed = false;
+    }
 }
 
 
