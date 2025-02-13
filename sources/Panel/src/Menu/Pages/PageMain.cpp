@@ -209,6 +209,7 @@ namespace PageMain
         {
             Menu::SetOpenedPage(PageMessages::self);
         }
+        , nullptr
     };
 
     static Button bSignals
@@ -220,6 +221,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     static Button bNetwork
@@ -231,6 +233,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     static const int x_button2 = 710;
@@ -244,6 +247,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     static Button bResetY
@@ -255,6 +259,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     static Button bReady
@@ -266,6 +271,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     static Button bRunning
@@ -277,6 +283,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     static Button bCompletion
@@ -288,6 +295,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     int start_x = 350;
@@ -302,6 +310,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     int delta_x = 115;
@@ -315,6 +324,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     static Button bShturval
@@ -326,6 +336,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     int start_x_m = start_x + 55;
@@ -339,7 +350,8 @@ namespace PageMain
         []()
         {
 
-        }
+        },
+        nullptr
     };
 
     static Button bPlusX
@@ -351,6 +363,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     int start_x_p = start_x_m + 80;
@@ -365,6 +378,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     static Button bMinusY
@@ -376,6 +390,7 @@ namespace PageMain
         {
 
         }
+        , nullptr
     };
 
     static Item *items[] =

@@ -61,6 +61,7 @@ namespace PageMessages
         {
             Messages::Init();
         }
+        , nullptr
     };
 
     static Button bMainScreen
@@ -72,6 +73,7 @@ namespace PageMessages
         {
             Menu::SetOpenedPage(PageMain::self);
         }
+        , nullptr
     };
 
     static Item *items[] =

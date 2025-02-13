@@ -89,7 +89,7 @@ Color Button::ColorFill() const
 {
     const Color colors[TypeButton::Count] =
     {
-        Color::WHITE, Color::GRAY_75, Color::WHITE, Color::WHITE, Color::WHITE, Color::WHITE
+        Color::WHITE, Color::GRAY_75, Color::WHITE, Color::WHITE, Color::WHITE, Color::GRAY_75
     };
 
     Color color = colors[type];
@@ -138,6 +138,11 @@ void Button::Draw()
     Font::Set(TypeFont::GOSTAU16BOLD);
 
     Text(text).Write(x + 5, y + 5, Color::BLACK);
+
+    if (funcDraw)
+    {
+        funcDraw(x, y);
+    }
 }
 
 

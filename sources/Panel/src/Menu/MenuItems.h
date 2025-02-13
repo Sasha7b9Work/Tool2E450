@@ -70,8 +70,8 @@ class Button : public Item
 {
 public:
 
-    Button(TypeButton::E _type, int _x, int _y, pchar text_ru, void (*funcPress)()) :
-        Item(_x, _y), type(_type), text(text_ru), funcOnPress(funcPress)
+    Button(TypeButton::E _type, int _x, int _y, pchar text_ru, void (*funcPress)(), void (*_funcDraw)(int, int)) :
+        Item(_x, _y), type(_type), text(text_ru), funcOnPress(funcPress), funcDraw(_funcDraw)
     {
     }
 
@@ -122,6 +122,8 @@ private:
     bool active = true;
 
     void (*funcOnPress)();
+
+    void (*funcDraw)(int, int);     // Дополнительная функция отрисовки
 };
 
 
