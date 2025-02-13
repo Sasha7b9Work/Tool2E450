@@ -75,10 +75,6 @@ public:
     {
     }
 
-    virtual void DrawMenuItem(int, int, int, bool)
-    {
-    }
-
     virtual void Draw() override;
 
     virtual bool IsButton() const override

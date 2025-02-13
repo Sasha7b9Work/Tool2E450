@@ -22,7 +22,7 @@ void Messages::Init()
 {
     for (int i = 0; i < SIZE_BUFFER; i++)
     {
-        buffer[i] = (char)0xFF;
+        buffer[i] = (char)-1;
     }
 }
 
